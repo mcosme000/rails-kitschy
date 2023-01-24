@@ -48,6 +48,7 @@ gem "sassc-rails"
 # CUSTOM GEMS
 gem "devise"
 gem "pundit"
+gem "faker"
 gem "cloudinary"
 
 
