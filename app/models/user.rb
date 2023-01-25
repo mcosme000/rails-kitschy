@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :lessons
   has_many :bookings
 
-  validates :email, presence: true
+  validates :email, format: { with: /\A[^@\s]+@([^@.\s]+\.)+[^@.\s]+\z/ }
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

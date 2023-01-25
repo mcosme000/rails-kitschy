@@ -3,5 +3,5 @@ class Booking < ApplicationRecord
   belongs_to :lesson
 
   validates :start_date, presence: true
-  validates :status, presencef: true
+  validates :status, presence: true
 end
