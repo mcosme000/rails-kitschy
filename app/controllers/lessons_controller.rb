@@ -2,10 +2,11 @@ class LessonsController < ApplicationController
   before_action :set_lesson, only: %i[show edit update destroy]
 
   def index
-    @lessons = Lesson.all
+    @lessons = policy_scope(Lesson).all
   end
 
   def show
+    authorize @lesson
   end
 
   def new
