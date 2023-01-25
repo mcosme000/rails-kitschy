@@ -29,10 +29,10 @@ end
     cuisine_genre: Faker::Food.ethnic_category,
     description: Faker::Food.description,
     capacity: Faker::Number.within(range: 1..120),
-    fee: Faker::Number.within(range: 0.5..125.0),
+    fee: Faker::Number.within(range: 0..125),
     lesson_length_minutes: Faker::Number.within(range: 45..120),
     user: users.sample
-    )
-  end
+  )
+end
 
-  puts "Finished!"
+puts "Finished!"
