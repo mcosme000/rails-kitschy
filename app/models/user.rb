@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :bookings
   has_one_attached :photo
 
+  validates :email, format: { with: /\A[^@\s]+@([^@.\s]+\.)+[^@.\s]+\z/ }
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
