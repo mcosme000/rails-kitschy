@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="d-flex row">
+    <% @lessons.each do |lesson| %>
+      <div class="card m-2" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body position-relative">
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="card-title"><%= lesson.name %></h5>
+            <h4 class="card-title"><strong>$<%= lesson.fee %></strong></h4>
+          </div>
+          <p class="card-text mb-5"><%= lesson.description[...70] %>[...]</p>
+          <a href="#" class="btn btn-primary my-2 position-absolute bottom-0 end-0">DETAIL</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
