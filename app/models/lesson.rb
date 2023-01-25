@@ -2,5 +2,11 @@ class Lesson < ApplicationRecord
   has_many :bookings
   belongs_to :user
 
-  validate :users, :email, :address, :description, :capacity, :cuisine_genre, :fee, :lesson_length_minutes, presence: true
+  validates :name, length: {minimum: 3}
+  validates :address, presence: true
+  validates :cuisine_genre, presence: true
+  validates :description, length: {in: 10..75}
+  validates :lesson_length_minutes, numericality: {only_integer: true}
+  validates :fee, numericality: {only_integer: true}
+  validates :capacity, numericality: {only_integer: true}
 end

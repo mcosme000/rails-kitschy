@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :lessons
   has_many :bookings
 
+  validates :email, presence: true
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
