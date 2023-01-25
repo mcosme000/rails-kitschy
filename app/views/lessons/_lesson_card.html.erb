@@ -9,7 +9,8 @@
             <h4 class="card-title"><strong>$<%= lesson.fee %></strong></h4>
           </div>
           <p class="card-text mb-5"><%= lesson.description[...70] %>[...]</p>
-          <a href="#" class="btn btn-primary my-2 position-absolute bottom-0 end-0">DETAIL</a>
+          <%= link_to 'DETAIL', lesson_path(lesson), class: "btn btn-primary my-2 position-absolute bottom-0 end-0" %>
+          <%# <a href="#" class="btn btn-primary my-2 position-absolute bottom-0 end-0">DETAIL</a> %>
         </div>
       </div>
     <% end %>
