@@ -24,7 +24,7 @@ end
 
 25.times do
   Lesson.create!(
-    name: Faker::Name.name,
+    name: Faker::Food.dish,
     address: Faker::Address.full_address,
     cuisine_genre: Faker::Food.ethnic_category,
     description: Faker::Food.description,
