@@ -7,13 +7,16 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.lesson = @lesson
     @booking.user = current_user
+    authorize @booking
     if @booking.save
+      flash[:notice] = "Booking created!"
       redirect_to lesson_path(@lesson)
     else
       render :new, status: :unprocessable_entity
@@ -46,6 +49,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:user_id, :lesson_id, :status, :start_date_time)
+    params.require(:booking).permit(:user_id, :lesson_id, :start_date, :start_time, :participants)
   end
 end
