@@ -13,14 +13,12 @@ User.destroy_all
 
 puts "Creating a lesson..."
 
-users = []
-
-5.times do
-  users << User.create(
-    email: Faker::Internet.email,
-    password: 1234567
-  )
-end
+User.create([
+  { email: "maria@example.com", password: "1234567" },
+  { email: "mmak@example.com" , password: "1234567" },
+  { email: "jun@example.com", password: "1234567" },
+  { email: "jay@example.com", password: "1234567" }
+])
 
 25.times do
   Lesson.create!(
@@ -31,8 +29,9 @@ end
     capacity: Faker::Number.within(range: 1..120),
     fee: Faker::Number.within(range: 0..125),
     lesson_length_minutes: Faker::Number.within(range: 45..120),
-    user: users.sample
-  )
-end
+    user: User.all.sample
+   )
+ end
+
 
 puts "Finished!"
