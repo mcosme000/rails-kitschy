@@ -27,17 +27,12 @@
       <h3>Book your lesson now!</h3>
       <% if user_signed_in? %>
         <div class="form">
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">Date</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-          </div>
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">Number of people</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-          </div>
-          <div class="input-group mb-3">
-            <button type="submit" class="btn btn-primary">Book</button>
-          </div>
+          <%= simple_form_for [@lesson, @booking] do |f| %>
+            <%= f.input :start_date, as: :date, html5: true %>
+            <%= f.input :start_time, as: :time, html5: true %>
+            <%= f.input :participants %>
+            <%= f.button :submit, class: "btn btn-success" %>
+          <% end %>
         </div>
       <% else %>
         <p>You need to <%= link_to "login", new_user_session_path %> to book your lesson</p>

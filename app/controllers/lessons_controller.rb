@@ -7,6 +7,7 @@ class LessonsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     authorize @lesson
   end
 
