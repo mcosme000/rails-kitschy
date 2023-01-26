@@ -13,14 +13,22 @@ User.destroy_all
 
 puts "Creating a lesson..."
 
-users = []
 
-5.times do
-  users << User.create(
-    email: Faker::Internet.email,
-    password: 1234567
-  )
-end
+# users = []
+# 5.times do
+#   users << User.create(
+#     email: Faker::Internet.email,
+#     password: 1234567
+#   )
+# end
+
+User.create!([
+    {email: "maria@example.com", password: "1234567"},
+    {email: "mmak@example.com" , password: "1234567"},
+    {email: "jun@example.com", password: "1234567"},
+    {email: "jay@example.com", password: "1234567"}
+  ])
+
 
 25.times do
   Lesson.create!(
