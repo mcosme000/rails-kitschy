@@ -1,0 +1,82 @@
+
+<div class="container my-5">
+
+  <h1><%= @lesson.name %></h1>
+  <ul>
+    <li><%= @lesson.capacity %></li>
+    <li><%= @lesson.cuisine_genre %></li>
+    <li><%= @lesson.lesson_length_minutes %> minutes</li>
+  </ul>
+  <p>Lesson details: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  Culpa alias fugiat vel ipsam dolor itaque vero earum aliquam soluta.
+  Exercitationem placeat perferendis tempore similique dolorum vitae sint
+  illum neque voluptate? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  Eius architecto eveniet quisquam molestias ipsa cumque in culpa,
+  inventore incidunt, quod velit doloribus perferendis dolores,
+  beatae unde deserunt dolor porro tempora?</p>
+
+  <hr class="mt-5">
+
+  <section class="row mt-5">
+    <div class="col-12 col-md-8 d-flex">
+      <%= cl_image_tag('https://images.unsplash.com/photo-1574966740793-953ad374e8fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80', height: 300) %>
+      <div class="m-5">
+        <%= @lesson.user.email %>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Voluptate doloremque odit cumque ipsam asperiores similique vitae eaque
+        quae blanditiis quisquam! Iste nobis corrupti, rem mollitia facere maiores
+        ex nihil possimus.</p>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4">
+      <h3>Book your lesson now!</h3>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Date</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Number of people</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div class="input-group mb-3">
+        <button type="submit" class="btn btn-primary">Book</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="row mt-5">
+    <h3>Location</h3>
+    <div class="col-12 col-md-4">
+      <%= @lesson.address %>
+      <ul>
+        Instructions to get there:
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+      </ul>
+    </div>
+
+    <div class="col-12 col-md-8">
+      <%= cl_image_tag('lesson_map') %>
+    </div>
+  </section>
+
+  <section class="mt-5">
+    <h3>Photos from past events</h3>
+    <div class="grid row">
+      <div class="col-12 col-md-3">
+        <%= cl_image_tag('photo-1589047133523-6c254bea9a35_vp0xxs') %>
+      </div>
+      <div class="col-12 col-md-3">
+        <%= cl_image_tag('frank-zhang-rioTUXsDImc-unsplash_pzlque') %>
+      </div>
+      <div class="col-12 col-md-3">
+        <%= cl_image_tag('matthieu-joannon-1vDVxYnABUA-unsplash_lwccju') %>
+      </div>
+      <div class="col-12 col-md-3">
+        <%= cl_image_tag('photo-1589047133531-570405874c6a_k0yeqb') %>
+      </div>
+    </div>
+  </section>
+
+</div>

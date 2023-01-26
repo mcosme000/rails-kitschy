@@ -1,11 +1,13 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @lessons = Lesson.all
+    @lessons = policy_scope(Lesson).all
   end
 
   def show
+    authorize @lesson
   end
 
   def new
