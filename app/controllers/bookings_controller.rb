@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_lesson, only: %i[new create edit update]
 
   def index
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking).all
   end
 
   def new
@@ -12,6 +12,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.lesson = @lesson
+    @booking.user = current_user
     if @booking.save
       redirect_to lesson_path(@lesson)
     else

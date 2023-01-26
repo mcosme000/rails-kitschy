@@ -9,7 +9,7 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "My bookings", "#", class: "nav-link" %>
+            <%= link_to "My bookings", bookings_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Create a lesson", "#", class: "nav-link" %>
