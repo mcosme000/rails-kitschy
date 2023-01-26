@@ -7,13 +7,7 @@
     <li><%= @lesson.cuisine_genre %></li>
     <li><%= @lesson.lesson_length_minutes %> minutes</li>
   </ul>
-  <p>Lesson details: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-  Culpa alias fugiat vel ipsam dolor itaque vero earum aliquam soluta.
-  Exercitationem placeat perferendis tempore similique dolorum vitae sint
-  illum neque voluptate? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-  Eius architecto eveniet quisquam molestias ipsa cumque in culpa,
-  inventore incidunt, quod velit doloribus perferendis dolores,
-  beatae unde deserunt dolor porro tempora?</p>
+  <p><%= @lesson.description %></p>
 
   <hr class="mt-5">
 
@@ -31,17 +25,23 @@
 
     <div class="col-12 col-md-4">
       <h3>Book your lesson now!</h3>
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Date</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-      </div>
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Number of people</span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-      </div>
-      <div class="input-group mb-3">
-        <button type="submit" class="btn btn-primary">Book</button>
-      </div>
+      <% if user_signed_in? %>
+        <div class="form">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Date</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Number of people</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          </div>
+          <div class="input-group mb-3">
+            <button type="submit" class="btn btn-primary">Book</button>
+          </div>
+        </div>
+      <% else %>
+        <p>You need to <%= link_to "login", new_user_session_path %> to book your lesson</p>
+      <% end %>
     </div>
   </section>
 
