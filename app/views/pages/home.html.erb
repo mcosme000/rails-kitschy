@@ -1,1 +1,75 @@
-<%= render template: "lessons/index" %>
+<div class="landing" style="background-image: url(https://images.unsplash.com/photo-1556910109-a14b4226abff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80)">
+  <div class="container landing-content">
+    <h1>Planning on learn how to cook?</h1>
+    <%= link_to "See available lessons", lessons_path, class: "btn btn-success" %>
+  </div>
+</div>
+
+<section class="py-5">
+  <div class="container">
+    <h2>Some meaningfull content</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore ducimus in nisi eligendi consectetur! Ea ex consectetur distinctio quibusdam, odio officiis soluta molestias. Illum eos quaerat accusamus velit ea iusto?</p>
+    <p>More meaningful Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, ratione nisi? Autem quae modi error voluptatem? Voluptate expedita, nesciunt similique debitis aut, corrupti quae pariatur, excepturi eius laborum consequatur aliquam.</p>
+  </div>
+</section>
+
+<section class="background py-5">
+  <div class="container">
+    <h2>Teach others how to cook your favourite dishes</h2>
+    <p>You also can join Kitschy as a teacher!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore ducimus in nisi eligendi consectetur! Ea ex consectetur distinctio quibusdam, odio officiis soluta molestias. Illum eos quaerat accusamus velit ea iusto?</p>
+    <% if user_signed_in? %>
+      <%= link_to "Teach in Kitschy", class: "btn btn-success" %>
+    <% else %>
+      <%= link_to "Create an account", new_user_registration_path, class: "btn btn-success"  %>
+    <% end %>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <h2>What our users say about Kitschy</h2>
+      <div class="container testimony-container mt-4 row">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="testimony">
+            <div class="quote">
+              <i class="fa fa-solid fa fa-quote-left"></i>
+              <p>Amazing</p>
+            </div>
+            <div class="user">
+              <p class="fw-bold">Maria C.</p>
+              <p>Teacher at Kitschy</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="testimony">
+            <div class="quote">
+              <i class="fa fa-solid fa fa-quote-left"></i>
+              <p>Amazing</p>
+            </div>
+            <div class="user">
+              <p class="fw-bold">Maria C.</p>
+              <p>Teacher at Kitschy</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+         <div class="testimony">
+            <div class="quote">
+              <i class="fa fa-solid fa fa-quote-left"></i>
+              <p>Amazing</p>
+            </div>
+            <div class="user">
+              <p class="fw-bold">Maria C.</p>
+              <p>Teacher at Kitschy</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+  </div>
+</section>
