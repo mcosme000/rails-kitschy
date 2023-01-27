@@ -1,0 +1,40 @@
+.landing {
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .landing-content {
+    padding: 50px 0px;
+    h1 {
+      font-size: 60px;
+      color: #fff;
+      font: bold;
+    }
+  }
+}
+
+.background {
+  background: rgb(232, 232, 232);
+}
+
+.testimony {
+  margin-bottom: 20px;
+  padding: 0;
+  box-shadow: 0px 1px 5px rgb(161, 161, 161);
+  p {
+    margin: 0px;
+  }
+  .quote {
+    padding: 20px;
+    i {
+      font-size: 40px;
+      color: grey;
+    }
+  }
+  .user {
+    padding: 10px;
+    background: lightgray;
+  }
+}

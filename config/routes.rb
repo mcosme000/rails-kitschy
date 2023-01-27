@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   # needs to be changed!
   root to: "lessons#index"
+  get 'homepage', to: 'pages#home'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
