@@ -5,3 +5,21 @@
     margin-bottom: 0;
   }
 }
+
+// card in lesson index
+.lesson-tags {
+  & > ul {
+    & > li {
+      font-size: 0.68rem;
+    }
+  }
+}
+
+.card-bottom {
+  & > h5 {
+    width: 60%;
+  }
+  & > .btn {
+    width: 40%;
+  }
+}
