@@ -2,29 +2,34 @@
 <div class="container my-5">
 
   <h1><%= @lesson.name %></h1>
-  <ul>
-    <li><%= @lesson.capacity %></li>
-    <li><%= @lesson.cuisine_genre %></li>
-    <li><%= @lesson.lesson_length_minutes %> minutes</li>
+  <ul class="p-0">
+    <li class="d-inline me-3 tag"><i class="fa fa-solid fa fa-person me-2"></i> <%= @lesson.capacity %></li>
+    <li class="d-inline me-3 tag"><i class="fa-solid fa-utensils me-2"></i> <%= @lesson.cuisine_genre %> food</li>
+    <li class="d-inline me-3 tag"><i class="fa fa-solid fa fa-clock me-2"></i> <%= @lesson.lesson_length_minutes %> min</li>
   </ul>
-  <p><%= @lesson.description %></p>
+  <p>Learn how to cook an amazing <%= @lesson.description %></p>
 
   <hr class="mt-5">
 
   <section class="row mt-5">
-    <div class="col-12 col-lg-8 d-flex">
-      <%= image_tag('person_02.jpg', class: "avatar")  %>
-      <div class="m-5">
-        <%= @lesson.user.email %>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <div class="col-12 col-lg-6 d-flex flex-column">
+      <div class="d-flex align-items-center">
+        <%= image_tag('person_02.jpg', class: "avatar-large")  %>
+        <div class="ms-3">
+          <p class="fw-bold m-0">Host: <%= @lesson.user.email %></p>
+          <p class="m-0"><%= @lesson.user.lessons.count %> Verified lessons</p>
+        </div>
+      </div>
+      <div class="my-3">
+        <p>About me: lorem ipsum dolor sit amet consectetur adipisicing elit.
         Voluptate doloremque odit cumque ipsam asperiores similique vitae eaque
         quae blanditiis quisquam! Iste nobis corrupti, rem mollitia facere maiores
         ex nihil possimus.</p>
       </div>
     </div>
 
-    <div class="col-12 col-lg-4">
-      <h3>Book your lesson now!</h3>
+    <div class="col-12 col-lg-6 bg-white p-4 rounded shadow-sm">
+      <h3>Book your lesson with <%= @lesson.user.email %>!</h3>
       <% if user_signed_in? %>
         <div class="form">
           <%= simple_form_for [@lesson, @booking] do |f| %>
@@ -39,23 +44,30 @@
       <% end %>
     </div>
   </section>
+</div>
 
-  <section class="row mt-5">
-    <h3>Location</h3>
-    <div class="col-12 col-md-4">
-      <%= @lesson.address %>
-      <ul>
-        Instructions to get there:
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
-      </ul>
-    </div>
+<div class="section bg-white py-5">
+  <div class="container">
+    <section class="row">
+      <div class="col-12 col-md-4">
+        <h2>Location</h2>
+        <p class="fw-bold"><%= @lesson.address %></p>
+        <ul class="p-0">
+          <p class="mb-1">Instructions to get there:</p>
+          <li class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+          <li class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+        </ul>
+      </div>
 
-    <div class="col-12 col-md-8">
-      <%= image_tag('map.png') %>
-    </div>
-  </section>
+      <div class="col-12 col-md-8">
+        <%= image_tag('map.png') %>
+      </div>
+    </section>
+  </div>
+</div>
 
+
+<div class="container my-5">
   <section class="mt-5">
     <h3>Photos from past events</h3>
     <div class="grid row">
