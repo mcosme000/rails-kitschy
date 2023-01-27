@@ -11,4 +11,9 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create]
   end
   resources :bookings, only: %i[index edit update destroy]
+  resources :bookings do
+    member do
+      get :cancel
+    end
+  end
 end
