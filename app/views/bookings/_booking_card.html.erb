@@ -1,27 +1,116 @@
 <div class="container">
   <div class="d-flex row">
-    <% @bookings.each do |booking| %>
-      <div class="card m-2 pt-2" style="width: 18rem;">
-        <div class="img-area position-relative">
-          <div class="timenotice bg-danger position-absolute top-1 start-1 m-2">
-            <p><%= booking.start_date.to_s.split(" ")[0] %> <%= booking.start_time.to_s.split(" ")[1] %></p>
+      <h2>Waiting confirmation by the teacher</h2>
+     <% @bookings.each do |booking| %>
+      <% if booking.status == "pending" %>
+        <div class="card m-2 pt-2" style="width: 18rem;">
+          <div class="img-area position-relative">
+            <div class="timenotice bg-danger position-absolute top-1 start-1 m-2">
+              <p><%= booking.start_date.to_s.split(" ")[0] %> <%= booking.start_time.to_s.split(" ")[1] %></p>
+            </div>
+            <%= image_tag "https://source.unsplash.com/200x200/?food #{booking.lesson.name}" %>
+            <%# <img src="https://source.unsplash.com/200x200/?food" class="card-img-top" alt="..."> %>
           </div>
-          <%= image_tag "https://source.unsplash.com/200x200/?food #{booking.lesson.name}" %>
-          <%# <img src="https://source.unsplash.com/200x200/?food" class="card-img-top" alt="..."> %>
+          <div class="card-body position-relative">
+            <div class="d-flex justify-content-between align-items-center">
+              <h5 class="card-title"><%= booking.lesson.name %></h5>
+              <h4 class="card-title"><strong>$<%= booking.lesson.fee %></strong></h4>
+            </div>
+            <p class="card-text"><%= booking.lesson.description[...70] %>[...]</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <h5><i class="fa-solid fa-user"></i> <%= booking.participants %></h5>
+              <%= link_to 'DETAIL', lesson_path(booking.lesson), class: "btn btn-primary" %>
+              <%# <%= link_to 'DELETE', edit_booking_path(booking) %>
+              <%= link_to 'CANCEL', cancel_booking_path(booking) %>
+            </div>
+            <%# <a href="#" class="btn btn-primary my-2 position-absolute bottom-0 end-0">DETAIL</a> %>
+          </div>
         </div>
-        <div class="card-body position-relative">
-          <div class="d-flex justify-content-between align-items-center">
-            <h5 class="card-title"><%= booking.lesson.name %></h5>
-            <h4 class="card-title"><strong>$<%= booking.lesson.fee %></strong></h4>
+      <% end %>
+     <% end %>
+      <h2>Accepted Booking</h2>
+      <% @bookings.each do |booking| %>
+        <% if booking.status == "accepted" %>
+        <div class="card m-2 pt-2" style="width: 18rem;">
+          <div class="img-area position-relative">
+            <div class="timenotice bg-danger position-absolute top-1 start-1 m-2">
+              <p><%= booking.start_date.to_s.split(" ")[0] %> <%= booking.start_time.to_s.split(" ")[1] %></p>
+            </div>
+            <%= image_tag "https://source.unsplash.com/200x200/?food #{booking.lesson.name}" %>
+            <%# <img src="https://source.unsplash.com/200x200/?food" class="card-img-top" alt="..."> %>
           </div>
-          <p class="card-text"><%= booking.lesson.description[...70] %>[...]</p>
-          <div class="d-flex justify-content-between align-items-center">
-            <h5><i class="fa-solid fa-user"></i> <%= booking.participants %></h5>
-            <%= link_to 'DETAIL', lesson_path(booking.lesson), class: "btn btn-primary" %>
+          <div class="card-body position-relative">
+            <div class="d-flex justify-content-between align-items-center">
+              <h5 class="card-title"><%= booking.lesson.name %></h5>
+              <h4 class="card-title"><strong>$<%= booking.lesson.fee %></strong></h4>
+            </div>
+            <p class="card-text"><%= booking.lesson.description[...70] %>[...]</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <h5><i class="fa-solid fa-user"></i> <%= booking.participants %></h5>
+              <%= link_to 'DETAIL', lesson_path(booking.lesson), class: "btn btn-primary" %>
+              <%# <%= link_to 'DELETE', edit_booking_path(booking) %>
+              <%= link_to 'CANCEL', cancel_booking_path(booking) %>
+            </div>
+            <%# <a href="#" class="btn btn-primary my-2 position-absolute bottom-0 end-0">DETAIL</a> %>
           </div>
-          <%# <a href="#" class="btn btn-primary my-2 position-absolute bottom-0 end-0">DETAIL</a> %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+     <% end %>
+      <h2>Canceled Booking</h2>
+        <% @bookings.each do |booking| %>
+        <% if booking.status == "canceled" %>
+        <div class="card m-2 pt-2" style="width: 18rem;">
+          <div class="img-area position-relative">
+            <div class="timenotice bg-danger position-absolute top-1 start-1 m-2">
+              <p>CANCELED!</p>
+            </div>
+            <%= image_tag "https://source.unsplash.com/200x200/?food #{booking.lesson.name}" %>
+            <%# <img src="https://source.unsplash.com/200x200/?food" class="card-img-top" alt="..."> %>
+          </div>
+          <div class="card-body position-relative">
+            <div class="d-flex justify-content-between align-items-center">
+              <h5 class="card-title"><%= booking.lesson.name %></h5>
+              <h4 class="card-title"><strong>$<%= booking.lesson.fee %></strong></h4>
+            </div>
+            <p class="card-text"><%= booking.lesson.description[...70] %>[...]</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <h5><i class="fa-solid fa-user"></i> <%= booking.participants %></h5>
+              <%= link_to 'DETAIL', lesson_path(booking.lesson), class: "btn btn-primary" %>
+              <%# <%= link_to 'DELETE', edit_booking_path(booking) %>
+              <%= link_to 'CANCEL', cancel_booking_path(booking) %>
+            </div>
+            <%# <a href="#" class="btn btn-primary my-2 position-absolute bottom-0 end-0">DETAIL</a> %>
+          </div>
+        </div>
+      <% end %>
+      <% end %>
+      <h2>completed Booking</h2>
+        <% @bookings.each do |booking| %>
+        <% if booking.status == "end" %>
+        <div class="card m-2 pt-2" style="width: 18rem;">
+          <div class="img-area position-relative">
+            <div class="timenotice bg-danger position-absolute top-1 start-1 m-2">
+              <p><%= booking.start_date.to_s.split(" ")[0] %> <%= booking.start_time.to_s.split(" ")[1] %></p>
+            </div>
+            <%= image_tag "https://source.unsplash.com/200x200/?food #{booking.lesson.name}" %>
+            <%# <img src="https://source.unsplash.com/200x200/?food" class="card-img-top" alt="..."> %>
+          </div>
+          <div class="card-body position-relative">
+            <div class="d-flex justify-content-between align-items-center">
+              <h5 class="card-title"><%= booking.lesson.name %></h5>
+              <h4 class="card-title"><strong>$<%= booking.lesson.fee %></strong></h4>
+            </div>
+            <p class="card-text"><%= booking.lesson.description[...70] %>[...]</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <h5><i class="fa-solid fa-user"></i> <%= booking.participants %></h5>
+              <%= link_to 'DETAIL', lesson_path(booking.lesson), class: "btn btn-primary" %>
+              <%# <%= link_to 'DELETE', edit_booking_path(booking) %>
+              <%= link_to 'CANCEL', cancel_booking_path(booking) %>
+            </div>
+            <%# <a href="#" class="btn btn-primary my-2 position-absolute bottom-0 end-0">DETAIL</a> %>
+          </div>
+        </div>
+      <% end %>
+      <% end %>
   </div>
 </div>
