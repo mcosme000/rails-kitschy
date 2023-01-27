@@ -12,8 +12,8 @@
   <hr class="mt-5">
 
   <section class="row mt-5">
-    <div class="col-12 col-md-8 d-flex">
-      <%= cl_image_tag('https://res.cloudinary.com/dj2f2ofgq/image/upload/v1674779655/production/conscious-design-I4e1cY1I0FQ-unsplash_iojice.jpg', class: "avatar-big") %>
+    <div class="col-12 col-lg-8 d-flex">
+      <%= image_tag('person_02.jpg', class: "avatar")  %>
       <div class="m-5">
         <%= @lesson.user.email %>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-lg-4">
       <h3>Book your lesson now!</h3>
       <% if user_signed_in? %>
         <div class="form">
@@ -52,7 +52,7 @@
     </div>
 
     <div class="col-12 col-md-8">
-      <%= cl_image_tag('https://res.cloudinary.com/dj2f2ofgq/image/upload/v1674567512/production/lesson_map.png') %>
+      <%= image_tag('map.png') %>
     </div>
   </section>
 
