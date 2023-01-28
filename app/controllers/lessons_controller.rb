@@ -1,9 +1,14 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: %i[show edit update destroy]
-  skip_before_action :authenticate_user!, only: %i[index show]
+  skip_before_action :authenticate_user!, only: %i[index show my_lesson]
 
   def index
     @lessons = policy_scope(Lesson).all
+  end
+
+  def my_lessons
+    @lessons = policy_scope(Lesson).where(user: current_user)
+    authorize @lessons
   end
 
   def show
@@ -24,21 +29,21 @@ class LessonsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-    if @lesson.update(lesson_params)
-      redirect_to lesson_path(@lesson)
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @lesson.update(lesson_params)
+  #     redirect_to lesson_path(@lesson)
+  #   else
+  #     render :edit, status: :unprocessable_entity
+  #   end
+  # end
 
-  def destroy
-    @lesson.destroy
-    redirect_to root_path, status: :see_other
-  end
+  # def destroy
+  #   @lesson.destroy
+  #   redirect_to root_path, status: :see_other
+  # end
 
   private
 

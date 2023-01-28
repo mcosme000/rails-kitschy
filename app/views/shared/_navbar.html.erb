@@ -16,6 +16,9 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
+            <%= link_to "My Lessons", my_lessons_lessons_path, class: "nav-link me-4" %>
+          </li>
+          <li class="nav-item">
             <%= link_to "My bookings", bookings_path, class: "nav-link me-4" %>
           </li>
           <li class="nav-item">
