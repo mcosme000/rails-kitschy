@@ -31,14 +31,7 @@
     <div class="col-12 col-lg-6 bg-white p-4 rounded shadow-sm">
       <h3>Book your lesson with <%= @lesson.user.email %>!</h3>
       <% if user_signed_in? %>
-        <div class="form">
-          <%= simple_form_for [@lesson, @booking] do |f| %>
-            <%= f.input :start_date, as: :date, html5: true %>
-            <%= f.input :start_time, as: :time, html5: true %>
-            <%= f.input :participants %>
-            <%= f.button :submit, class: "btn btn-success" %>
-          <% end %>
-        </div>
+        <%= render 'lessons/booking_form' %>
       <% else %>
         <p>You need to <%= link_to "login", new_user_session_path %> to book your lesson</p>
       <% end %>
