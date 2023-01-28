@@ -1,0 +1,8 @@
+<div class="form">
+  <%= simple_form_for [@lesson, @booking] do |f| %>
+    <%= f.input :start_date, as: :date, html5: true %>
+    <%= f.input :start_time, as: :time, html5: true %>
+    <%= f.input :participants, collection: 1..@lesson.capacity %>
+    <%= f.button :submit, class: "btn btn-success" %>
+  <% end %>
+</div>
