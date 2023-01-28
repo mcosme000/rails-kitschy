@@ -1,7 +1,7 @@
 .landing {
   height: 60vh;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,7 +14,7 @@
     }
 
     p {
-      font-size: 20px;
+      font-size: 26px;
       color: #fff;
       font: bold;
     }
@@ -23,6 +23,10 @@
       text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     }
   }
+}
+
+.landing-p {
+  font-size: 18px;
 }
 
 .background {
@@ -40,11 +44,11 @@
     padding: 20px;
     i {
       font-size: 40px;
-      color: grey;
+      color: $green;
     }
   }
   .user {
     padding: 10px;
-    background: lightgray;
+    background: $lightgreen;
   }
 }
