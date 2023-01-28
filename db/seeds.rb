@@ -11,14 +11,16 @@ puts "Cleaning database..."
 Lesson.destroy_all
 User.destroy_all
 
-puts "Creating a lesson..."
+puts "creating users"
 
 User.create([
   { email: "maria@example.com", password: "1234567" },
   { email: "mmak@example.com" , password: "1234567" },
   { email: "jun@example.com", password: "1234567" },
   { email: "jay@example.com", password: "1234567" }
-])
+            ])
+puts "finished creating users"
+puts "seeding lessons..."
 
 25.times do
   Lesson.create!(
@@ -27,11 +29,10 @@ User.create([
     cuisine_genre: Faker::Food.ethnic_category,
     description: Faker::Food.description,
     capacity: Faker::Number.within(range: 1..10),
-    fee: Faker::Number.within(range: 0..125),
-    lesson_length_minutes: Faker::Number.within(range: 45..120),
+    fee: Faker::Number.within(range: 0..150),
+    lesson_length_minutes: Faker::Number.within(range: 30..120),
     user: User.all.sample
   )
 end
-
 
 puts "Finished!"
