@@ -10,11 +10,11 @@
       </div>
 
       <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-        <div class="d-flex row justify-content-around flex-wrap p-2 accordion-body">
-        <h5 class="ms-5 mt-3"><%= "There is no bookings in this field." if Booking.where(status: "end").count == 0 %></h5>
+        <div class="d-flex row justify-content-start flex-wrap p-2 accordion-body">
+        <h5 class="ms-5"><%= "There is no bookings in this field." if Booking.where(status: "ended").count == 0 %></h5>
           <% @bookings.each do |booking| %>
-            <% if booking.status == "end" %>
-              <div class="card mb-3 position-relative" style="max-width: 540px;">
+            <% if booking.status == "ended" %>
+              <div class="card m-3 position-relative" style="max-width: 540px;">
                 <div class="d-flex row g-0">
                   <div class="card m-2 col-md-4">
                     <%= image_tag "https://source.unsplash.com/200x200/?food #{booking.lesson.name}" %>
@@ -27,7 +27,7 @@
                   <div class="col-md-7">
                     <div class="card-body">
                       <div class="booking-time">
-                        <h5 class="mb-0 card-title"><%= booking.start_date.to_s.split(" ")[0] %> <%= booking.start_time.to_s.split(" ")[1] %></h5>
+                        <h5 class="mb-0 card-title"><%= booking.start_date.to_s.split(" ")[0] %> <%= booking.start_time.to_s.split(" ")[1][0..4] %></h5>
                       </div>
 
                       <hr class="mt-1">

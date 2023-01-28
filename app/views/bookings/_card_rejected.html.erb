@@ -3,18 +3,23 @@
     <div class="accordion-item">
     <div class="accordion-header" id="headingThree">
         <div class="accordion-button titile-box border border-1 d-flex p-2 accordion-header" id="headingThree" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+<<<<<<< HEAD:app/views/bookings/_card_rejected.html.erb
+            <span class="bg-maingreen p-2 me-2" style="display: inline-block; height: 38.39px;"></span>
+            <h2 class="mb-0">Rejected Bookings</h2>
+=======
             <span class="border border-danger bg-danger border-5 pe-1 me-2" style="display: inline-block; height: 38.39px;"></span>
             <h2 class="mb-0">Cancelled Bookings</h2>
+>>>>>>> 8e4b1cad0440e351d8a3599c0a72f1ed4870f6a9:app/views/bookings/_card_canceled.html.erb
         </div>
 
       </div>
 
       <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-        <div class="d-flex row justify-content-around flex-wrap p-2 accordion-body">
-        <h5 class="ms-5 mt-3"><%= "There is no bookings in this field." if Booking.where(status: "canceled").count == 0 %></h5>
+        <div class="d-flex row justify-content-start flex-wrap p-2 accordion-body">
+        <h5 class="ms-5"><%= "There is no bookings in this field." if Booking.where(status: "rejected").count == 0 %></h5>
           <% @bookings.each do |booking| %>
-            <% if booking.status == "canceled" %>
-              <div class="card mb-3 position-relative" style="max-width: 540px;">
+            <% if booking.status == "rejected" %>
+              <div class="card m-4 position-relative" style="max-width: 540px;">
                 <div class="d-flex row g-0">
                   <div class="card m-2 col-md-4">
                     <%= image_tag "https://source.unsplash.com/200x200/?food #{booking.lesson.name}" %>
@@ -27,7 +32,7 @@
                   <div class="col-md-7">
                     <div class="card-body">
                       <div class="booking-time">
-                        <h5 class="mb-0 card-title"><%= booking.start_date.to_s.split(" ")[0] %> <%= booking.start_time.to_s.split(" ")[1] %></h5>
+                        <h5 class="mb-0 card-title"><%= booking.start_date.to_s.split(" ")[0] %> <%= booking.start_time.to_s.split(" ")[1][0..4] %></h5>
                       </div>
 
                       <hr class="mt-1">
