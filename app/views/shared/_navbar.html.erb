@@ -1,6 +1,13 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container">
-    <h1><%= link_to "KITSCHY", root_path, class: "navbar-brand"%></h1>
+    <div class="d-flex align-items-center">
+      <h1><%= link_to "Kitschy", root_path, class: "navbar-brand logo"%></h1>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <%= link_to "Lessons", lessons_path, class: "nav-link me-4" %>
+        </li>
+      </ul>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,9 +15,6 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "Lessons", lessons_path, class: "nav-link me-4" %>
-          </li>
           <li class="nav-item">
             <%= link_to "My bookings", bookings_path, class: "nav-link me-4" %>
           </li>

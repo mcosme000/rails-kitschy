@@ -6,15 +6,21 @@
   flex-direction: column;
   justify-content: center;
   .landing-content {
-    padding: 50px 0px;
+    padding: 50px 10px;
     h1 {
       font-size: 60px;
       color: #fff;
       font: bold;
     }
+
     p {
+      font-size: 20px;
       color: #fff;
       font: bold;
+    }
+
+    h1, p {
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     }
   }
 }
