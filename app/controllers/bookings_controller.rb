@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
       flash[:notice] = "Booking created!"
       redirect_to bookings_path
     else
-      render :new, status: :unprocessable_entity
+      render 'lessons/show', status: :unprocessable_entity
     end
   end
 
