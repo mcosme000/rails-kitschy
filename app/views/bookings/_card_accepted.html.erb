@@ -6,8 +6,9 @@
     </div>
 
     <div class="d-flex row justify-content-around flex-wrap p-2">
+    <h5 class="ms-5 mt-3"><%= "There is no bookings in this field." if @bookings.length == 0 %></h5>
     <% @bookings.each do |booking| %>
-      <% if booking.status == "pending" %>
+      <% if booking.status == "accepted" %>
       <%# <% if booking.status == "accepted" %>
         <div class="card mb-3" style="max-width: 540px;">
           <div class="d-flex row g-0">

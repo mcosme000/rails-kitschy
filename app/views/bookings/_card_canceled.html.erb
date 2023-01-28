@@ -5,13 +5,14 @@
 
       <div class="accordion-button titile-box border border-1 d-flex p-2 accordion-header" id="headingOne" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
           <span class="border border-danger bg-danger border-5 pe-1 me-2" style="display: inline-block; height: 38.39px;"></span>
-          <h2 class="mb-0">Canceled Booking</h2>
+          <h2 class="mb-0">Recently Canceled Bookings</h2>
       </div>
 
       <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
         <div class="d-flex row justify-content-around flex-wrap p-2 accordion-body">
+        <h5 class="ms-5 mt-3"><%= "There is no bookings in this field." if @bookings.length == 0 %></h5>
           <% @bookings.each do |booking| %>
-            <% if booking.status == "pending" %>
+            <% if booking.status == "canceled" %>
               <div class="card mb-3 position-relative" style="max-width: 540px;">
                 <div class="d-flex row g-0">
                   <div class="card m-2 col-md-4">
