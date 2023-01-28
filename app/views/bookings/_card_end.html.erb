@@ -1,17 +1,19 @@
 <div class="container mb-2">
   <div class="accordion" id="accordionExample">
     <div class="accordion-item">
-    <h2 class="accordion-header" id="headingTwo">
+      <div class="accordion-header" id="headingFour">
+        <div class="accordion-button titile-box border border-1 d-flex p-2 accordion-header" id="headingFour" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+            <span class="border border-secondary bg-secondary border-5 pe-1 me-2"  style="display: inline-block; height: 38.39px;"></span>
+            <h2 class="mb-0">Your Past Lessons</h2>
+        </div>
 
-      <div class="accordion-button titile-box border border-1 d-flex p-2 accordion-header" id="headingTwo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <span class="border border-secondary bg-secondary border-5 pe-1 me-2"  style="display: inline-block; height: 38.39px;"></span>
-          <h2 class="mb-0">Your Past Lessons</h2>
       </div>
 
-      <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
         <div class="d-flex row justify-content-around flex-wrap p-2 accordion-body">
+        <h5 class="ms-5 mt-3"><%= "There is no bookings in this field." if Booking.where(status: "end").count == 0 %></h5>
           <% @bookings.each do |booking| %>
-            <% if booking.status == "pending" %>
+            <% if booking.status == "end" %>
               <div class="card mb-3 position-relative" style="max-width: 540px;">
                 <div class="d-flex row g-0">
                   <div class="card m-2 col-md-4">
