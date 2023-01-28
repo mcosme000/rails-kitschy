@@ -1,6 +1,7 @@
 <div class="landing" style="background-image: url(https://images.unsplash.com/photo-1556910109-a14b4226abff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80)">
   <div class="container landing-content">
-    <h1>Planning to learn how to cook? Learn Local. What's around the corner?</h1>
+    <h1>Planning to learn how to cook?</h1>
+    <p class="fw-bold text-white">Learn Local. What's around the corner?</p>
     <%= link_to "Discover Lessons around you.", lessons_path, class: "btn btn-success" %>
   </div>
 </div>
@@ -19,7 +20,7 @@
     <p>Do you have a receipe you are confident in cooking? Why not share that locally? You can join Kitschy as a teacher!</p>
     <p>Teach Local. Build Connection. Discover the community around you. Share your favourite dishes. Kitschy enables you to share your dish to the world. To people who are open to finding a new discovery. Local classes with local people. Come be a teacher at Kistchy</p>
     <% if user_signed_in? %>
-      <%= link_to "Teach with Kitschy", class: "btn btn-success" %>
+      <%= link_to "Teach with Kitschy", "#", class: "btn btn-success" %>
     <% else %>
       <%= link_to "Create an account", new_user_registration_path, class: "btn btn-success"  %>
     <% end %>
@@ -47,7 +48,7 @@
           <div class="testimony">
             <div class="quote">
               <i class="fa fa-solid fa fa-quote-left"></i>
-              <p>I discovered a new of baking cookies!</p>
+              <p>I discovered a new world of baking cookies!</p>
             </div>
             <div class="user">
               <p class="fw-bold">Junsuke W.</p>

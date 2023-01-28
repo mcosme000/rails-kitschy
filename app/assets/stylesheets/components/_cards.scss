@@ -5,6 +5,11 @@
     margin-bottom: 0;
   }
 }
+.bg-maingreen {
+  border: solid 1px $green;
+  background-color: $green;
+}
+
 
 // card in lesson index
 .lesson-tags {

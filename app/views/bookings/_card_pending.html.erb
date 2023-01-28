@@ -3,7 +3,7 @@
     <div class="accordion-item">
       <div class="accordion-header" id="headingOne">
         <div class="accordion-button titile-box border border-1 d-flex p-2 accordion-header" id="headingOne" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          <span class="border border-warning bg-warning border-5 pe-1 me-2" style="display: inline-block; height: 38.39px;"></span>
+          <span class="bg-maingreen p-2 me-2" style="display: inline-block; height: 38.39px;"></span>
           <h2 class="mb-0">Pending Approvals</h2>
         </div>
       </div>
@@ -15,7 +15,7 @@
           <% if booking.status == "pending" %>
             <div class="card mb-3" style="max-width: 540px;">
               <div class="d-flex row g-0">
-                <div class="card m-2 col-md-4" style="background-color: #ffe484;">
+                <div class="card m-2 col-md-4">
                   <%= image_tag "https://source.unsplash.com/200x200/?food #{booking.lesson.name}" %>
                   <div class="card-body position-relative">
                     <div class="text-center">
@@ -46,9 +46,9 @@
                     <hr class="mt-1">
 
                     <div class="action-buttons d-flex justify-content-end">
-                        <%= link_to 'LESSON DETAIL', lesson_path(booking.lesson), class: "btn btn-primary me-2" %>
+                        <%= link_to 'LESSON DETAIL', lesson_path(booking.lesson), class: "btn btn-maingreen me-2" %>
                         <%# <%= link_to 'DELETE', edit_booking_path(booking) %>
-                        <%= link_to 'CANCEL', cancel_booking_path(booking), class: "btn btn-danger text-white" %>
+                        <%= link_to 'CANCEL', cancel_booking_path(booking), class: "btn btn-secondary text-white" %>
                     </div>
                   </div>
                 </div>
