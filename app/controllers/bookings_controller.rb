@@ -23,24 +23,27 @@ class BookingsController < ApplicationController
     end
   end
 
-  def edit
-    @booking = Booking.find(params[:id])
-  end
+  # def edit
+  #   @booking = Booking.find(params[:id])
+  #   authorize @booking
+  # end
 
-  def update
-    @booking = Booking.find(params[:id])
-    if @booking.update(booking_params)
-      redirect_to booking_path(@booking)
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   @booking = Booking.find(params[:id])
+  #   authorize @booking
 
-  def destroy
-    @booking = Booking.find(params[:id])
-    @booking.destroy
-    redirect_to lesson_path(@booking.lesson), status: :see_other
-  end
+  #   if @booking.update(booking_params)
+  #     redirect_to booking_path(@booking)
+  #   else
+  #     render :edit, status: :unprocessable_entity
+  #   end
+  # end
+
+  # def destroy
+  #   @booking = Booking.find(params[:id])
+  #   @booking.destroy
+  #   redirect_to lesson_path(@booking.lesson), status: :see_other
+  # end
 
   def cancel
     @booking = Booking.find(params[:id])
