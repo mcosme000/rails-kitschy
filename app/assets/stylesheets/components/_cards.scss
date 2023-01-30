@@ -1,4 +1,24 @@
 // card in booking index
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 992px) {
+  .cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 .timenotice {
   padding: 3px;
   & > p {
@@ -14,6 +34,8 @@
   border: solid 1px $lightgreen;
   background-color: $lightgreen;
 }
+
+
 
 
 // card in lesson index
