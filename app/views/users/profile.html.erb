@@ -1,4 +1,37 @@
+<div class="landing position-relative" style="height: 30vh; background-image: url(https://images.unsplash.com/photo-1556910109-a14b4226abff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80); background-position: 30% 85%;">
+    <div class="contain">
+      <div class="avatar-main d-flex align-items-center ms-5 ps-5">
+        <div class="flex-avatar">
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag(current_user.photo.key, { class: "avatar-mainvisual dropdown-toggle", id: "navbarDropdown", "data-bs-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false" }) %>
+          <% else %>
+            <img class="avatar-mainvisual dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" />
+          <% end %>
+        </div>
+        <div class="flex-name">
+          <h3 class="ms-5"><%= current_user.email %></h3>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="container">
 
-<div class="container mt-5">
-  <h1>Welcome back, <%= @user.email %></h1>
+
+  <hr class="mt-large">
+
+    <div class="profile-subtitle mt-3 d-flex align-items-center">
+      <h2 class="me-2">My Lessons</h2>
+      <h5 class="p-2 bg-success text-white text-center" style="width: 140px;"><%= @lessons.count %> <%= @lessons.count >= 2 ? "lessons" : "lesson" %></h5>
+    </div>
+    <%= render "lessons/lesson_list" %>
+
+  <hr class="mt-5">
+
+    <h2 class="mt-3 me-2">My Bookings</h2>
+
+    <%= render "bookings/booking_card" %>
+
+
+
+
 </div>

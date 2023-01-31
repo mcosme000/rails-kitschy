@@ -47,7 +47,7 @@ class LessonsController < ApplicationController
   def destroy
     authorize @lesson
     @lesson.destroy
-    redirect_to my_lessons_lessons_path, status: :see_other
+    redirect_to profile_path, status: :see_other
   end
 
   private

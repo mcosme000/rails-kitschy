@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     authorize @booking
     if @booking.save
       flash[:notice] = "Booking created!"
-      redirect_to bookings_path
+      redirect_to profile_path
     else
       render 'lessons/show', status: :unprocessable_entity
     end
@@ -49,7 +49,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.canceled!
-    redirect_to bookings_path
+    redirect_to profile_path
   end
 
   private
