@@ -1,6 +1,7 @@
 class Lesson < ApplicationRecord
   has_many :bookings, dependent: :destroy
   belongs_to :user
+  has_one_attached :photo
 
   validates :name, length: { minimum: 3 }
   validates :address, presence: true
