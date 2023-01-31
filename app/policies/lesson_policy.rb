@@ -14,4 +14,24 @@ class LessonPolicy < ApplicationPolicy
   def my_lessons?
     true
   end
+
+  def new?
+    create?
+  end
+
+  def create?
+    true
+  end
+
+  def edit?
+    update?
+  end
+
+  def update?
+    return record.user == user
+  end
+
+  def destroy?
+    return record.user == user
+  end
 end

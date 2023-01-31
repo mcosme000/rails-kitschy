@@ -18,10 +18,12 @@ class LessonsController < ApplicationController
 
   def new
     @lesson = Lesson.new
+    authorize @lesson
   end
 
   def create
     @lesson = Lesson.new(lesson_params)
+    authorize @lesson
     if @lesson.save
       redirect_to lesson_path(@lesson)
     else
@@ -29,21 +31,24 @@ class LessonsController < ApplicationController
     end
   end
 
-  # def edit
-  # end
+  def edit
+    authorize @lesson
+  end
 
-  # def update
-  #   if @lesson.update(lesson_params)
-  #     redirect_to lesson_path(@lesson)
-  #   else
-  #     render :edit, status: :unprocessable_entity
-  #   end
-  # end
+  def update
+    authorize @lesson
+    if @lesson.update(lesson_params)
+      redirect_to lesson_path(@lesson)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
 
-  # def destroy
-  #   @lesson.destroy
-  #   redirect_to root_path, status: :see_other
-  # end
+  def destroy
+    authorize @lesson
+    @lesson.destroy
+    redirect_to my_lessons_lessons_path, status: :see_other
+  end
 
   private
 

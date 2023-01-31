@@ -22,7 +22,7 @@
             <%= link_to "My bookings", bookings_path, class: "nav-link me-4" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Create a lesson", "#", class: "nav-link me-4" %>
+            <%= link_to "Create a lesson", new_lesson_path, class: "nav-link me-4" %>
           </li>
           <li class="nav-item dropdown">
             <% if current_user.photo.attached? %>
