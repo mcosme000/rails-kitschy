@@ -1,0 +1,34 @@
+.pagination {
+  margin-top: 10px;
+  cursor: pointer;
+
+  a, span, em {
+    padding: 0.2em 1em;
+    display: block;
+    margin-right: 10px;
+  }
+
+  .disabled {
+    color: #999999;
+    border: 1px solid #dddddd;
+  }
+
+  .current {
+    font-style: normal;
+    font-weight: bold;
+    background: $lightgreen;
+    color: white;
+    border: 1px solid $lightgreen;
+  }
+
+  a {
+    text-decoration: none;
+    color: $green;
+    border: 1px solid $lightgreen;
+    &:hover, &:focus {
+      color: #000033;
+      border-color: #000033;
+    }
+  }
+
+}

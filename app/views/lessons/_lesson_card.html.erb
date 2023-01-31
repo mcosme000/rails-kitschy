@@ -1,6 +1,6 @@
 <div class="cards-container">
   <% @lessons.each do |lesson| %>
-    <div class="card m-2 position-relative">
+    <div class="card position-relative">
       <%= image_tag "https://source.unsplash.com/200x200/?food #{lesson.name}", class: "lesson-img" %>
       <%= render "lessons/action_buttons", lesson: lesson %>
 

@@ -3,7 +3,7 @@ class LessonsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show my_lesson]
 
   def index
-    @lessons = policy_scope(Lesson).all
+    @lessons = policy_scope(Lesson).paginate(page: params[:page], per_page: 6)
   end
 
   def my_lessons
