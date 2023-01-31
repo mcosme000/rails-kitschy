@@ -1,0 +1,6 @@
+<% if policy(lesson).edit? %>
+  <div class="action_buttons d-flex justify-content-around align-items-center position-absolute top-0 left-0 p-3", style="width: 230px">
+    <%= link_to 'Edit', edit_lesson_path(lesson), class: "btn btn-lightgreen me-2", style: "width: 48%;"%>
+    <%= link_to 'Delete', lesson_path(lesson), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-lightgreen", style: "width: 48%;" %>
+  </div>
+<% end %>

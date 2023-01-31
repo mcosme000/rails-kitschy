@@ -2,3 +2,12 @@
   background-color: $green;
   color: #fff;
 }
+
+.btn-lightgreen {
+  background-color: $lightgreen;
+  color: black;
+  &:hover {
+    background-color: $green;
+    color: #fff;
+  }
+}
