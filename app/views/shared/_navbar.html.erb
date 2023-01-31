@@ -8,6 +8,18 @@
         </li>
       </ul>
     </div>
+
+    <div class="search">
+      <%= form_with url: lessons_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Search for recipes"
+        %>
+        <%= submit_tag "Search", class: "btn btn-success" %>
+      <% end %>
+    </div>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -15,12 +27,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item">
+          <%# <li class="nav-item">
             <%= link_to "My Lessons", my_lessons_lessons_path, class: "nav-link me-4" %>
-          </li>
+          <%# </li>
           <li class="nav-item">
             <%= link_to "My bookings", bookings_path, class: "nav-link me-4" %>
-          </li>
+          <%# </li> %>
           <li class="nav-item">
             <%= link_to "Create a lesson", new_lesson_path, class: "nav-link me-4" %>
           </li>
