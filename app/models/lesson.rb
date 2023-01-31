@@ -9,4 +9,11 @@ class Lesson < ApplicationRecord
   validates :lesson_length_minutes, numericality: { only_integer: true }
   validates :fee, numericality: { only_integer: true }
   validates :capacity, numericality: { only_integer: true }
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_description_and_genre,
+    against: [ :name, :description, :cuisine_genre ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

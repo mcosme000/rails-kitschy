@@ -51,6 +51,8 @@ gem "pundit"
 gem "faker"
 gem "cloudinary"
 gem 'will_paginate', '~> 3.3'
+gem "pg_search"
+
 
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
