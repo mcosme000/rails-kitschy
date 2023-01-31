@@ -30,7 +30,7 @@
     </div>
 
     <div class="col-12 col-lg-6 bg-white p-4 rounded shadow-sm">
-      <h3>Book your lesson with <%= @lesson.user.email %>!</h3>
+      <h3>Book your lesson with <%= @lesson.user.email.split("@").first.capitalize %>!</h3>
       <% if user_signed_in? %>
         <%= render 'lessons/booking_form' %>
       <% else %>
