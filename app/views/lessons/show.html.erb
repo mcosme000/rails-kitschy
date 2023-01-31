@@ -19,7 +19,7 @@
       <div class="d-flex align-items-center">
         <%= image_tag('person_02.jpg', class: "avatar-large")  %>
         <div class="ms-3">
-          <p class="fw-bold m-0">Host: <%= @lesson.user.email.split('@').first.capitalize %></p>
+          <p class="fw-bold m-0">Host: <%= @lesson.first_name %></p>
           <p class="m-0"><%= @lesson.user.lessons.count %> Verified lessons</p>
         </div>
       </div>
