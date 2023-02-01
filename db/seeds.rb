@@ -62,7 +62,7 @@ Lesson.create(
 Lesson.create(
   name: "Red Velvet Cheesecake Swirl Brownies",
   address: "1-chōme-11-9 Sasazuka, Shibuya City, Tokyo 151-0073",
-  cuisine_genre: "Baked food",
+  cuisine_genre: "Baked",
   description: "These red velvet cheesecake brownies are moist, delicious, and absolutely beautiful! Perfect for red velvet cake lovers; adds a different twist to the traditional cake. A great dessert for Valentine's Day and can be made ahead.",
   capacity: Faker::Number.within(range: 1..10),
   fee: Faker::Number.within(range: 0..150),
@@ -98,7 +98,7 @@ Lesson.create(
 Lesson.create(
   name: "Chicken Quesadillas",
   address: "2 Chome-11-3 Meguro, Meguro City, Tokyo 153-0063",
-  cuisine_genre: "Mexican food",
+  cuisine_genre: "Mexican",
   description: "This chicken quesadilla recipe is great to make for parties. Zesty chicken, cooked peppers, and melted cheese are a delightful combination. Cut into wedges and serve with sour cream and salsa.",
   capacity: Faker::Number.within(range: 1..10),
   fee: Faker::Number.within(range: 0..150),
