@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :bookings, only: %i[index edit update destroy]
   resources :bookings do
     member do
-      get :cancel
+      get :accept, :cancel, :reject
     end
   end
   get '/profile', to: 'users#profile'

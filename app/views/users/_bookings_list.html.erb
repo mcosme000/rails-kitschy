@@ -1,0 +1,21 @@
+<div class="lists-container">
+  <div class="container">
+    <% @my_applications.each do |booking| %>
+      <% if booking.status == "pending" %>
+        <hr>
+        <div class="list p-1 d-flex justify-content-between align-items-center">
+          <h4 class="card-title mb-0"><%= booking.lesson.name %></h4>
+          <h5 class="mb-0 card-title"><%= booking.start_date.to_s.split(" ")[0] %> <%= booking.start_time.to_s.split(" ")[1][0..4] %></h5>
+          <h5 class="mb-0 card-title"> <%= booking.user.first_name %></h5>
+          <h5 class="mb-0 card-title"><%= booking.participants %> / <%= booking.lesson.capacity %></h5>
+
+          <div class="buttons d-flex">
+            <%= link_to 'Accept', accept_booking_path(booking), data: {turbo_method: :accept, turbo_confirm: "Do you accept this booking?"}, class: "btn btn-success me-2" %>
+            <%= link_to 'Reject', reject_booking_path(booking), data: {turbo_method: :reject, turbo_confirm: "Do you reject this booking?"}, class: "btn btn-secondary" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <hr>
+  </div>
+</div>
