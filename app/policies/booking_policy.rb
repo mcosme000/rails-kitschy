@@ -6,10 +6,6 @@ class BookingPolicy < ApplicationPolicy
     end
   end
 
-  # def my_booking_applications?
-  #   true
-  # end
-
   def new?
     create?
   end
@@ -23,11 +19,11 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    return record.user == user
+    record.user == user
   end
 
   def destroy?
-    return record.user == user
+    record.user == user
   end
 
   def cancel?
@@ -35,14 +31,14 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def accept?
-    return record.lesson.user == user
+    record.lesson.user == user
   end
 
   def reject?
-    return record.lesson.user == user
+    record.lesson.user == user
   end
 
   def end?
-    return record.lesson.user == user
+    record.lesson.user == user
   end
 end
