@@ -3,15 +3,24 @@
 
 
 <div class="container my-5">
-
-  <h1><%= @lesson.name %></h1>
-  <ul class="p-0">
-    <li class="d-inline me-3 tag"><i class="fa fa-solid fa fa-person me-2"></i> <%= @lesson.capacity %></li>
-    <li class="d-inline me-3 tag"><i class="fa-solid fa-utensils me-2"></i> <%= @lesson.cuisine_genre %> food</li>
-    <li class="d-inline me-3 tag"><i class="fa fa-solid fa fa-clock me-2"></i> <%= @lesson.lesson_length_minutes %> min</li>
-  </ul>
-  <p><%= @lesson.description %></p>
-
+  <div class="row g-0">
+    <div class="col-md-4 me-3" style="width: 100px">
+          <% if @lesson.photo.attached? %>
+            <%= cl_image_tag @lesson.photo.key, class: "lesson-img" %>
+          <% elsif lesson.main_photo %>
+            <%= image_tag "#{@lesson.main_photo}", class: "lesson-img" %>
+          <% end %>
+    </div>
+    <div class="col-md-8 ms-3">
+      <h1><%= @lesson.name %></h1>
+      <ul class="p-0">
+        <li class="d-inline me-3 tag"><i class="fa fa-solid fa fa-person me-2"></i> <%= @lesson.capacity %></li>
+        <li class="d-inline me-3 tag"><i class="fa-solid fa-utensils me-2"></i> <%= @lesson.cuisine_genre %> food</li>
+        <li class="d-inline me-3 tag"><i class="fa fa-solid fa fa-clock me-2"></i> <%= @lesson.lesson_length_minutes %> min</li>
+      </ul>
+      <p><%= @lesson.description %></p>
+    </div>
+</div>
   <hr class="mt-5">
 
   <section class="row mt-5">

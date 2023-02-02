@@ -29,6 +29,7 @@ class LessonsController < ApplicationController
 
   def create
     @lesson = Lesson.new(lesson_params)
+    @lesson.user = current_user
     authorize @lesson
     if @lesson.save
       redirect_to lesson_path(@lesson)
@@ -44,6 +45,7 @@ class LessonsController < ApplicationController
   def update
     authorize @lesson
     if @lesson.update(lesson_params)
+      flash[:notice] = "Lesson has been UPDATED."
       redirect_to lesson_path(@lesson)
     else
       render :edit, status: :unprocessable_entity
