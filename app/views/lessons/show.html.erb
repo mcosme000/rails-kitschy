@@ -4,7 +4,7 @@
 
 <div class="container my-5">
   <div class="row g-0">
-    <div class="col-md-4 me-3" style="width: 100px">
+    <div class="col-md-4 me-3" style="width: 200px">
           <% if @lesson.photo.attached? %>
             <%= cl_image_tag @lesson.photo.key, class: "lesson-img" %>
           <% elsif lesson.main_photo %>
