@@ -20,7 +20,7 @@ User.create([
   { email: "jay@example.com", password: "1234567", first_name: "Jay"  }
             ])
 puts "finished creating users"
-puts "seeding 16 lessons..."
+puts "seeding 6 lessons..."
 
 # 25.times do
 #   Lesson.create!(
@@ -37,7 +37,7 @@ puts "seeding 16 lessons..."
 
 Lesson.create(
   name: "Authentic Turkish Doner Kebab",
-  address: "5-chōme-6 Jingūmae, Shibuya City, Tokyo 150-0001",
+  address: "5-6 Jingumae, Shibuya, Tokyo 150-0001",
   cuisine_genre: "Turkish",
   description: "Doner meat kebabs are popular take-out foods, especially after a night at the pub. This favorite is so tasty — I'm sure once you try it, you'll certainly want to make more! Serve with warmed (lightly toasted) pita bread, chili sauce, and a salad of shredded cabbage, carrot, onion, and sliced cucumber. Also great to add as a topping for pizzas. Great to make in advance, slice and freeze.",
   capacity: Faker::Number.within(range: 1..10),
@@ -49,7 +49,7 @@ Lesson.create(
 
 Lesson.create(
   name: "Grain-Free Broccoli Fritters",
-  address: "2 Chome-1 Dogenzaka, Shibuya City, Tokyo 150-0043",
+  address: "2-1 Dogenzaka, Shibuya, Tokyo 150-0043",
   cuisine_genre: "Vegetarian",
   description: "These grain-free broccoli fritters are a great way to use up extra cooked broccoli, and they are on the table in minutes!",
   capacity: Faker::Number.within(range: 1..10),
@@ -61,7 +61,7 @@ Lesson.create(
 
 Lesson.create(
   name: "Red Velvet Cheesecake Swirl Brownies",
-  address: "1-chōme-11-9 Sasazuka, Shibuya City, Tokyo 151-0073",
+  address: "1-9 Sasazuka, Shibuya, Tokyo 151-0073",
   cuisine_genre: "Baked",
   description: "These red velvet cheesecake brownies are moist, delicious, and absolutely beautiful! Perfect for red velvet cake lovers; adds a different twist to the traditional cake. A great dessert for Valentine's Day and can be made ahead.",
   capacity: Faker::Number.within(range: 1..10),
@@ -73,7 +73,7 @@ Lesson.create(
 
 Lesson.create(
   name: "Gnocchi with Pomodoro Sauce",
-  address: "4-chōme-11-8 Ikenohata, Taito City, Tokyo 110-0008",
+  address: "Tokyo Ikenohata",
   cuisine_genre: "Italian",
   description: "Fluffy potato dumplings sautéed for a crispy exterior and tender interior with a simple tomato sauce. I used the oil from the marinated mozzarella ball container for the sauce with great success.",
   capacity: Faker::Number.within(range: 1..10),
@@ -85,7 +85,7 @@ Lesson.create(
 
 Lesson.create(
   name: "大根まるごと一本使うミルフィーユ鍋！ レシピ・作り方",
-  address: "2-chōme-19 Matsugaya, Taito City, Tokyo 111-0036",
+  address: "2-19 Matsugaya, Taito, Tokyo 111-0036 Taito",
   cuisine_genre: "Japanese",
   description: "簡単なのに華やか！旬のみずみずしい大根を美味しくたくさん食べられます！スライス大根なので辛味がなくお子さまも安心して召し上がれます！",
   capacity: Faker::Number.within(range: 1..10),
@@ -97,7 +97,7 @@ Lesson.create(
 
 Lesson.create(
   name: "Chicken Quesadillas",
-  address: "2 Chome-11-3 Meguro, Meguro City, Tokyo 153-0063",
+  address: "Tokyo Meguro",
   cuisine_genre: "Mexican",
   description: "This chicken quesadilla recipe is great to make for parties. Zesty chicken, cooked peppers, and melted cheese are a delightful combination. Cut into wedges and serve with sour cream and salsa.",
   capacity: Faker::Number.within(range: 1..10),
@@ -106,5 +106,6 @@ Lesson.create(
   user: User.all.sample,
   main_photo: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fpublic-assets.meredithcorp.io%2F68c8534d63b6bcf63b6fcc6a4bae3cab%2F1667259675273Quesidillas.jpg&q=60&c=sc&orient=true&poi=auto&h=512"
 )
+
 
 puts "Finished!"
