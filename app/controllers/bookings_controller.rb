@@ -5,9 +5,6 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking).all
   end
 
-  # def my_booking_applications
-  # end
-
   def new
     @booking = Booking.new
     authorize @booking
@@ -25,22 +22,6 @@ class BookingsController < ApplicationController
       render 'lessons/show', status: :unprocessable_entity
     end
   end
-
-  # def edit
-  #   @booking = Booking.find(params[:id])
-  #   authorize @booking
-  # end
-
-  # def update
-  #   @booking = Booking.find(params[:id])
-  #   authorize @booking
-
-  #   if @booking.update(booking_params)
-  #     redirect_to booking_path(@booking)
-  #   else
-  #     render :edit, status: :unprocessable_entity
-  #   end
-  # end
 
   def destroy
     @booking = Booking.find(params[:id])

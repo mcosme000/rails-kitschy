@@ -27,10 +27,10 @@ class LessonPolicy < ApplicationPolicy
   end
 
   def update?
-    return record.user == user
+    record.user == user
   end
 
   def destroy?
-    return record.user == user
+    record.user == user
   end
 end

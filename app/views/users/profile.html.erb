@@ -17,6 +17,7 @@
       </div>
     </div>
 </div>
+
 <div class="mt-large container">
 
   <div class="card card-in-prifie">
@@ -25,7 +26,6 @@
       <h5 class="p-2 bg-success text-white text-center" style="width: 140px; <%= "display: none;" if @bookings.count{ |b| b.status == "accepted" }.zero? && @my_applications.count{ |b| b.status == "accepted" }.zero? %>">
         <%= @bookings.count{ |b| b.status == "accepted" } + @my_applications.count{ |b| b.status == "accepted" } %> <%= @bookings.count{ |b| b.status == "accepted" } + @my_applications.count{ |b| b.status == "accepted" } >= 2 ? "Lessons" : "Lesson" %></h5>
     </div>
-
     <%= render "users/card_booking_accepted" %>
     <%= render "users/card_lesson_accepted" %>
     <h5 class="ms-5"><%= "There are no lessons planned." if @my_applications.count{ |b| b.status == "accepted" }.zero? && @bookings.count{ |b| b.status == "accepted" }.zero? %></h5>
@@ -55,11 +55,12 @@
     </div>
     <%= render "lessons/lesson_list" %>
     <h5 class="ms-5"><%= "There are no lessons planed by you." if @lessons.count.zero? %></h5>
+
   </div>
 
   <div class="card card-in-prifie">
     <div class="profile-subtitle mt-3 d-flex align-items-center">
-      <h2 class="me-2">Booking Applications to My Lessons</h2>
+      <h2 class="me-2">Booking Applications for My Lessons</h2>
       <h5 class="p-2 bg-success text-white text-center" style="width: 450px; <%= "display: none;" if @my_applications.count{ |b| b.status == "pending" }.zero? %>">
         <%= @my_applications.count{ |b| b.status == "pending" } %> <%= @my_applications.count{ |b| b.status == "pending" } >= 2 ? "bookings are" : "booking is" %> waiting your confirmation
       </h5>

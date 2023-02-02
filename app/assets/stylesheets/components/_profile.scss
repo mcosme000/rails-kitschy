@@ -1,8 +1,24 @@
 .avatar-main {
   position: absolute;
-  bottom: -180px;
-  left: 0;
+  bottom: -170%;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  text-align: center;
+  padding-left: 0;
+  @include media-breakpoint-up(xl) {
+    text-align: left;
+    flex-direction: row;
+    bottom: -80%;
+    width: 80%;
+    & .flex-text {
+      padding-top: 80px;
+    }
+  }
 }
 .mt-large {
-  margin-top: 230px;
+  margin-top: 420px;
+  @include media-breakpoint-up(xl) {
+    margin-top: 230px;
+  }
 }
