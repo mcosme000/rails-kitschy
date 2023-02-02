@@ -1,7 +1,7 @@
 <div class="cards-container">
   <% @lessons.each do |lesson| %>
-
-    <div class="card position-relative">
+    <% if lesson.user != current_user %>
+     <div class="card position-relative">
       <% if lesson.photo.attached? %>
         <%= cl_image_tag lesson.photo.key, class: "lesson-img" %>
       <% elsif lesson.main_photo %>
