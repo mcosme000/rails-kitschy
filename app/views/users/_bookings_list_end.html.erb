@@ -6,7 +6,7 @@
         <div class="list p-1 d-flex justify-content-between align-items-center">
           <div class="d-flex justify-content-center align-items-center">
             <h5 class="mb-0 card-title" style="width:200px;"><%= booking.start_date.to_s.split(" ")[0] %> <%= booking.start_time.to_s.split(" ")[1][0..4] %></h5>
-            <h6 class="p-2 text-white text-center <%= "bg-success" if booking.user == current_user %>  <%= "bg-secondary" if booking.lesson.user == current_user %>" style="width: 100px;">
+            <h6 class="p-2 text-center <%= "bg-success text-white" if booking.user == current_user %>  <%= "bg-lightgreen text-black" if booking.lesson.user == current_user %>" style="width: 100px;">
               <%= booking.user == current_user ? "Guest" : "Host" %>
             </h6>
           </div>
