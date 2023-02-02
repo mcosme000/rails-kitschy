@@ -22,7 +22,7 @@
     <p class="landing-p">Teach Local. Build Connection. Discover the community around you. Share your favourite dishes. Kitschy enables you to share your dish to the world with people who are open to find a new discovery. Local classes with local people. Come be a teacher at Kistchy</p>
 
     <% if user_signed_in? %>
-      <%= link_to "Teach with Kitschy", "#", class: "btn btn-success" %>
+      <%= link_to "Teach with Kitschy", new_lesson_path, class: "btn btn-success" %>
     <% else %>
       <%= link_to "Create an account", new_user_registration_path, class: "btn btn-success"  %>
     <% end %>
