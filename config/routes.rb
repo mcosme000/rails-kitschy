@@ -4,9 +4,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   resources :lessons do
-    collection do
-      get :my_lessons
-    end
+    resources :reviews,  only: %i[new create]
     resources :bookings, only: %i[new create]
   end
   resources :bookings, only: %i[index edit update destroy]
@@ -16,4 +14,5 @@ Rails.application.routes.draw do
     end
   end
   get '/profile', to: 'users#profile'
+  resources :reviews, only: %i[edit update destroy]
 end
