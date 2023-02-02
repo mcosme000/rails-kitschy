@@ -1,10 +1,9 @@
 <div class="landing" style="height: 30vh; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1556910109-a14b4226abff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80); background-position: 30% 85%;">
 </div>
 
-
 <div class="container my-5">
   <div class="row g-0">
-    <div class="col-md-4 me-3" style="width: 100px">
+    <div class="col-md-4 me-3" style="width: 200px">
           <% if @lesson.photo.attached? %>
             <%= cl_image_tag @lesson.photo.key, class: "lesson-img" %>
           <% elsif lesson.main_photo %>
