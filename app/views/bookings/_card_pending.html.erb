@@ -10,7 +10,7 @@
 
       <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
         <div class="d-flex row justify-content-start flex-wrap p-2 accordion-body">
-        <h5 class="ms-5"><%= "There is no bookings in this field." if Booking.where(status: "pending").count == 0 %></h5>
+        <h5 class="ms-5"><%= "There is no bookings in this field." if Booking.where(status: "pending").count == 0 || Booking.where(user: current_user).count == 0 %></h5>
         <% @bookings.each do |booking| %>
           <% if booking.status == "pending" %>
             <div class="card m-4" style="max-width: 540px;">
@@ -39,6 +39,7 @@
                           <li class="d-inline me-1 mb-1 tag"><i class="fa fa-solid fa fa-clock me-1"></i> <%= booking.lesson.lesson_length_minutes %> min</li>
                         </ul>
                       </div>
+                      <h5 class="text-end"><strong><i class="fa-solid fa-clipboard-user"></i> </strong> <%= booking.lesson.user.first_name %></h5>
                       <h5 class="text-end"><strong><i class="fa-solid fa-user"></i> </strong> <%= booking.participants %></h5>
                       <h5 class="text-end"><strong>$<%= booking.lesson.fee %></strong> / person</h5>
                     </div>
