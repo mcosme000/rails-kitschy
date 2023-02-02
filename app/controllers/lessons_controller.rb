@@ -36,7 +36,6 @@ class LessonsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-
   end
 
   def edit
@@ -46,6 +45,7 @@ class LessonsController < ApplicationController
   def update
     authorize @lesson
     if @lesson.update(lesson_params)
+      flash[:notice] = "Lesson has been UPDATED."
       redirect_to lesson_path(@lesson)
     else
       render :edit, status: :unprocessable_entity

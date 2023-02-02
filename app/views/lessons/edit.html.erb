@@ -1,1 +1,14 @@
-<h1>Hello from lesson edit page</h1>
+<div class="container my-5">
+  <h1>Hello from lesson edit page</h1>
+    <%= simple_form_for(model: @lesson, local: true) do |f| %>
+      <%= f.input :photo, as: :file %>
+      <%= f.input :name, placeholder: "Name of your Lesson" %>
+      <%= f.input :address %>
+      <%= f.input :cuisine_genre, collection: ["Japanese", "Lebanese", "Spanish", "West African", "Chinese", "Italian", "Indian", "Thai", "Korean", "Vietnamese"] %>
+      <%= f.input :description %>
+      <%= f.input :capacity, collection: 1..10 %>
+      <%= f.input :fee,  input_html: { min: '10', step: '10' } %>
+      <%= f.input :lesson_length_minutes, input_html: { min: '30', step: '15' } %>
+      <%= f.button :submit %>
+    <% end %>
+</div>
