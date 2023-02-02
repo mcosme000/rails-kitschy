@@ -42,11 +42,12 @@ class BookingsController < ApplicationController
   #   end
   # end
 
-  # def destroy
-  #   @booking = Booking.find(params[:id])
-  #   @booking.destroy
-  #   redirect_to lesson_path(@booking.lesson), status: :see_other
-  # end
+  def destroy
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.destroy
+    redirect_to profile_path, status: :see_other
+  end
 
   def accept
     @booking = Booking.find(params[:id])
@@ -66,6 +67,13 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.canceled!
+    redirect_to profile_path
+  end
+
+  def end
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.ended!
     redirect_to profile_path
   end
 

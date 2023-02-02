@@ -26,8 +26,12 @@ class BookingPolicy < ApplicationPolicy
     return record.user == user
   end
 
-  def cancel?
+  def destroy?
     return record.user == user
+  end
+
+  def cancel?
+    record.user == user || record.lesson.user == user
   end
 
   def accept?
@@ -35,6 +39,10 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def reject?
+    return record.lesson.user == user
+  end
+
+  def end?
     return record.lesson.user == user
   end
 end
