@@ -1,0 +1,21 @@
+.form {
+  margin: 0 auto;
+  width: 600px;
+  padding: 20px 30px;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0 0 2px rgba(81, 81, 81, 0.2);
+  a {
+    color: $green;
+    text-decoration: none;
+    &:hover {
+      color: darken($green, 10%);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .form {
+    width: 90%;
+  }
+}
