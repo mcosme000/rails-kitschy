@@ -12,6 +12,9 @@
       color: darken($green, 10%);
     }
   }
+  &__booking {
+    width: 500px;
+  }
 }
 
 @media (max-width: 768px) {
