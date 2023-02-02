@@ -21,7 +21,7 @@
 
   <div class="card card-in-prifie">
     <div class="profile-subtitle mt-3 d-flex align-items-center">
-      <h2 class="me-2">My Schedule</h2>
+      <h2 class="me-2">My Schedules</h2>
       <h5 class="p-2 bg-success text-white text-center" style="width: 140px; <%= "display: none;" if @bookings.count{ |b| b.status == "accepted" }.zero? && @my_applications.count{ |b| b.status == "accepted" }.zero? %>">
         <%= @bookings.count{ |b| b.status == "accepted" } + @my_applications.count{ |b| b.status == "accepted" } %> <%= @bookings.count{ |b| b.status == "accepted" } + @my_applications.count{ |b| b.status == "accepted" } >= 2 ? "Lessons" : "Lesson" %></h5>
     </div>
