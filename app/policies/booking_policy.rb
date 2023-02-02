@@ -6,6 +6,10 @@ class BookingPolicy < ApplicationPolicy
     end
   end
 
+  # def my_booking_applications?
+  #   true
+  # end
+
   def new?
     create?
   end
@@ -22,7 +26,23 @@ class BookingPolicy < ApplicationPolicy
     return record.user == user
   end
 
-  def cancel?
+  def destroy?
     return record.user == user
+  end
+
+  def cancel?
+    record.user == user || record.lesson.user == user
+  end
+
+  def accept?
+    return record.lesson.user == user
+  end
+
+  def reject?
+    return record.lesson.user == user
+  end
+
+  def end?
+    return record.lesson.user == user
   end
 end

@@ -3,7 +3,7 @@
   <div class="container landing-content">
     <h1>Local Lessons</h1>
     <h5 class="p-2 mb-2 bg-success text-white text-center" style="width: 140px;">
-    <%= pluralize(@lessons.count, 'lesson') %></h5>
+    <%= pluralize(@lessons.count - @lessons.where(user: current_user).count, 'lesson') %></h5>
   </div>
 </div>
 

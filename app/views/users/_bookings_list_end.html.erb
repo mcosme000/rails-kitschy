@@ -1,0 +1,44 @@
+<div class="lists-container">
+  <div class="container">
+    <% @my_applications.each do |booking| %>
+      <% if booking.status == "ended" %>
+      <hr>
+        <div class="list p-1 d-flex justify-content-between align-items-center">
+          <div class="d-flex justify-content-center align-items-center">
+            <h5 class="mb-0 card-title" style="width:200px;"><%= booking.start_date.to_s.split(" ")[0] %> <%= booking.start_time.to_s.split(" ")[1][0..4] %></h5>
+            <h6 class="p-2 text-white text-center <%= "bg-success" if booking.user == current_user %>  <%= "bg-secondary" if booking.lesson.user == current_user %>" style="width: 100px;">
+              <%= booking.user == current_user ? "Guest" : "Host" %>
+            </h6>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <h5 class="card-title mb-0 me-3"><%= booking.lesson.name %></h5>
+            <h5 class="mb-0 me-3"><strong><i class="fa-solid fa-user"></i> </strong> <%= booking.user.first_name %> : <%= booking.participants %></h5>
+
+            <%= link_to 'Details', lesson_path(booking.lesson), class: "btn btn-success me-2" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <% @bookings.each do |booking| %>
+      <% if booking.status == "ended" %>
+      <hr>
+        <div class="list p-1 d-flex justify-content-between align-items-center">
+          <div class="d-flex justify-content-center align-items-center">
+            <h5 class="mb-0 card-title" style="width:200px;"><%= booking.start_date.to_s.split(" ")[0] %> <%= booking.start_time.to_s.split(" ")[1][0..4] %></h5>
+            <h6 class="p-2 text-white text-center <%= "bg-success" if booking.user == current_user %>  <%= "bg-secondary" if booking.lesson.user == current_user %>" style="width: 100px;">
+              <%= booking.user == current_user ? "Guest" : "Host" %>
+            </h6>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <h5 class="card-title mb-0 me-3"><%= booking.lesson.name %></h5>
+            <h5 class="mb-0 me-3"><strong><i class="fa-solid fa-clipboard-user"></i> </strong> <%= booking.lesson.user.first_name %></h5>
+            <h5 class="mb-0 me-3"><strong><i class="fa-solid fa-user"></i> </strong> <%= booking.participants %></h5>
+
+            <%= link_to 'Details', lesson_path(booking.lesson), class: "btn btn-success me-2" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    <hr>
+  </div>
+</div>
