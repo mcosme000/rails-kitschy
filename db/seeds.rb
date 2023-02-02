@@ -154,7 +154,7 @@ Lesson.create(
   fee: 10 * rand(1..15),
   lesson_length_minutes: 15 * rand(2..8),
   user: User.all.sample,
-  main_photo: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5071244.jpg&q=60&c=sc&orient=true&poi=auto&h=512"
+  main_photo: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F8612426.jpg&q=60&c=sc&orient=true&poi=auto&h=512"
 )
 
 Lesson.create(
