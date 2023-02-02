@@ -11,7 +11,8 @@
         <div class="flex-name mt-5">
           <h3 class="ms-5"><%= current_user.first_name  %></h3>
           <h5 class="ms-5"><i class="fa-solid fa-envelope"></i> <%= current_user.email %></h6>
-          <p class="ms-5">User self introduction here! User self introduction here! User self introduction here!<br>User self introduction here! User self introduction here! User self introduction here!<br>User self introduction here! User self introduction here! User self introduction here!</p>
+          <p class="ms-5">About me: I am excited to share with you my recipes. I have been cooking for almost 10 years. Most of my recipes are passed down from my grandmother<br>
+          I love cooking and I am really glad to be able to meet you. I would love to welcome individuals with open mind and share their story with me.</p>
         </div>
       </div>
     </div>
@@ -27,7 +28,7 @@
 
     <%= render "users/card_booking_accepted" %>
     <%= render "users/card_lesson_accepted" %>
-    <h5 class="ms-5"><%= "There is no lesson schedules." if @my_applications.count{ |b| b.status == "accepted" }.zero? && @bookings.count{ |b| b.status == "accepted" }.zero? %></h5>
+    <h5 class="ms-5"><%= "There are no lessons planned." if @my_applications.count{ |b| b.status == "accepted" }.zero? && @bookings.count{ |b| b.status == "accepted" }.zero? %></h5>
 
   </div>
 
@@ -40,7 +41,7 @@
     </div>
 
     <%= render "users/bookings_condition" %>
-    <h5 class="ms-5"><%= "There is no bookings." if @bookings.count{ |b| b.status == "pending" }.zero? && @bookings.count{ |b| b.status == "rejected" }.zero? %></h5>
+    <h5 class="ms-5"><%= "You have no bookings." if @bookings.count{ |b| b.status == "pending" }.zero? && @bookings.count{ |b| b.status == "rejected" }.zero? %></h5>
 
 
   </div>
@@ -53,7 +54,7 @@
       </h5>
     </div>
     <%= render "lessons/lesson_list" %>
-    <h5 class="ms-5"><%= "There is no lessons you own." if @lessons.count.zero? %></h5>
+    <h5 class="ms-5"><%= "There are no lessons planed by you." if @lessons.count.zero? %></h5>
   </div>
 
   <div class="card card-in-prifie">
@@ -64,7 +65,7 @@
       </h5>
     </div>
       <%= render "users/bookings_list_pending" %>
-      <h5 class="ms-5"><%= "There is no booking applications on my lesson." if @my_applications.count{ |b| b.status == "pending" }.zero? %></h5>
+      <h5 class="ms-5"><%= "There are no booking applications for your lessons." if @my_applications.count{ |b| b.status == "pending" }.zero? %></h5>
   </div>
 
   <div class="card card-in-prifie">
@@ -74,7 +75,7 @@
         <%= @bookings.count{ |b| b.status == "ended" } + @my_applications.count{ |b| b.status == "ended" } %> <%= @bookings.count{ |b| b.status == "accepted" } + @my_applications.count{ |b| b.status == "accepted" } >= 2 ? "Lessons" : "Lesson" %></h5>
     </div>
       <%= render "users/bookings_list_end" %>
-      <h5 class="ms-5"><%= "There is no lessons here." if @bookings.count{ |b| b.status == "ended" }.zero? && @my_applications.count{ |b| b.status == "ended" }.zero? %></h5>
+      <h5 class="ms-5"><%= "There are no lessons here." if @bookings.count{ |b| b.status == "ended" }.zero? && @my_applications.count{ |b| b.status == "ended" }.zero? %></h5>
   </div>
 
 
