@@ -1,3 +1,4 @@
+
   <%= simple_form_for @lesson do |f| %>
       <%= f.input :photo, as: :file %>
       <%= f.input :name, placeholder: "Name of your Lesson" %>
@@ -7,5 +8,5 @@
       <%= f.input :capacity, collection: 1..10 %>
       <%= f.input :fee,  input_html: { min: '10', step: '10' } %>
       <%= f.input :lesson_length_minutes, input_html: { min: '30', step: '15' } %>
-      <%= f.button :submit %>
+      <%= f.button :submit, class: "btn btn-info" %>
     <% end %>
