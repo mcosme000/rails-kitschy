@@ -71,7 +71,7 @@ Lesson.create(
 )
 
 Lesson.create(
-  name: "大根まるごと一本使うミルフィーユ鍋！ レシピ・作り方",
+  name: "大根まるごと一本使うミルフィーユ鍋",
   address: "2-19 Matsugaya, Taito, Tokyo 111-0036 Taito",
   cuisine_genre: "Japanese",
   description: "簡単なのに華やか！旬のみずみずしい大根を美味しくたくさん食べられます！スライス大根なので辛味がなくお子さまも安心して召し上がれます！",
@@ -108,9 +108,10 @@ Lesson.create(
   main_photo: "https://pds.exblog.jp/pds/1/201007/07/45/e0040345_933562.jpg"
 )
 
+# DONT WORK
 Lesson.create(
   name: "Anzac Biscuits (Australian Coconut-Oat Cookies)",
-  address: "15 Ikawacho hamanishi, Miyoshi shi, Tokushima ken",
+  address: "15, Miyoshi, Tokushima",
   cuisine_genre: "Australian",
   description: "I introduce to you my traditional recipe from Australia and New Zealand. Associated with the joint public holiday (ANZAC Day) to commemorate the Gallipoli landings during WW1.",
   capacity: rand(1..10),
@@ -156,9 +157,10 @@ Lesson.create(
   main_photo: "https://www.allrecipes.com/thmb/1xLhz3k83_lEGUe4qaQpe5e1q6s=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/8139887-f05cfb8d94af4f7bbf11fa62d03e7163.jpg"
 )
 
+# DONT WORK
 Lesson.create(
   name: "Indian Chicken Curry (Murgh Kari)",
-  address: "15 Tomihisacho, Miyako gun kanda machi, Fukuoka ken",
+  address: "15, Miyako, Fukuoka",
   cuisine_genre: "Indian",
   description: "This is a really good recipe for spicy Indian chicken curry. It's pretty easy to make and tastes really good!",
   capacity: rand(1..10),
@@ -170,7 +172,7 @@ Lesson.create(
 
 Lesson.create(
   name: "Pork Sinigang",
-  address: "4-chōme-19-9 Takashimadaira, Itabashi City, Tokyo 175-0082",
+  address: "4-9 Takashimadaira, Itabashi, Tokyo 175-0082",
   cuisine_genre: "Filipino",
   description: "Sinigang is a Filipino soup cooked with pork. Serve with rice and for additional sauce, use soy or fish sauce. If you want to, you can add what Filipinos call gabi gabi, which is a small taro root. When peeled they look like potatoes. You can add five to six of them when you add the water and make sure they are cooked through. Take them out when they are cooked because they can get too soft.",
   capacity: rand(1..10),
@@ -182,7 +184,7 @@ Lesson.create(
 
 Lesson.create(
   name: "Traditional Sauerbraten",
-  address: "9 Wagacho iwasawa, Kitakami shi, Iwate ken",
+  address: "12, Kitakami, Iwate",
   cuisine_genre: "German",
   description: "For this sauerbraten, I found two slightly different handwritten versions of my Grandmother's recipe. Born in Nekkar am Rhein in 1904, she naturally learned to cook traditional German meals as a young woman and didn't rely on a cookbook. I try to capture the nuance in this. Serve with potato dumplings.",
   capacity: rand(1..10),
@@ -194,7 +196,7 @@ Lesson.create(
 
 Lesson.create(
   name: "Ayam Penyet Pedas (Indonesian Spicy Penyet Chicken)",
-  address: "9 Wagacho iwasawa, Kitakami shi, Iwate ken",
+  address: "9, Kitakami, Iwate",
   cuisine_genre: "Indonesian",
   description: "Ayam Penyet (Penyet Chicken) is an incredibly spicy Indonesian dish that will make your tongue feel like burning... you will need to go to a special Asian grocery store to get some of the ingredients.",
   capacity: rand(1..10),

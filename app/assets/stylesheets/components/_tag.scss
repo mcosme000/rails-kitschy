@@ -2,5 +2,11 @@
   font-size: 16px;
   padding: 5px 20px;
   border-radius: 50px;
-  background: rgb(225, 225, 225);
+  background: $lightgreen;
+}
+
+@media (max-width: 768px) {
+  .tag {
+    font-size: 14px;
+  }
 }
