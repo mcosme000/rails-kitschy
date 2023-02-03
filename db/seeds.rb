@@ -71,7 +71,7 @@ Lesson.create(
 )
 
 Lesson.create(
-  name: "大根まるごと一本使うミルフィーユ鍋！ レシピ・作り方",
+  name: "大根まるごと一本使うミルフィーユ鍋",
   address: "2-19 Matsugaya, Taito, Tokyo 111-0036 Taito",
   cuisine_genre: "Japanese",
   description: "簡単なのに華やか！旬のみずみずしい大根を美味しくたくさん食べられます！スライス大根なので辛味がなくお子さまも安心して召し上がれます！",
