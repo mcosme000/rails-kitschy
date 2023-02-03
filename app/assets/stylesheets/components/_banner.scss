@@ -1,0 +1,25 @@
+.banner {
+  padding: 100px 0px;
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .banner-content {
+    color: #fff;
+  }
+}
+
+@media(max-width: 576px) {
+  .banner {
+    padding: 60px 0px;
+    .landing-content {
+      h1 {
+        font-size: 36px;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+}
