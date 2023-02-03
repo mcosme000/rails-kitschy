@@ -3,12 +3,16 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    authorize @review
   end
 
   def create
     @review = Review.new(review_params)
     @review.lesson = @lesson
+    @review.user = current_user
+    authorize @review
     if @review.save
+      flash[:notice] = "Your review created!"
       redirect_to lesson_path(@lesson)
     else
       render :new, status: :unprocessable_entity
@@ -17,6 +21,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
+    authorize @review
     @review.destroy
     redirect_to lesson_path(@review.lesson), status: :see_other
   end
@@ -24,7 +29,7 @@ class ReviewsController < ApplicationController
   private
 
   def set_lesson
-    @lesson = lesson.find(params[:lesson_id])
+    @lesson = Lesson.find(params[:lesson_id])
   end
 
   def review_params
