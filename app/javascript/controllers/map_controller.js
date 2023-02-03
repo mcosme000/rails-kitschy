@@ -15,14 +15,8 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     })
 
-    this.#addMarkersToMap()
-  }
-
-  #addMarkersToMap() {
-    this.markersValue.forEach((marker) => {
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .addTo(this.map)
-    });
+    new mapboxgl.Marker()
+      .setLngLat([12.554729, 55.70651])
+      .addTo(map);
   }
 }
