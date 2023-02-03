@@ -16,12 +16,23 @@
   font-family: $logo;
 }
 
+.container-fluid {
+  flex-wrap: wrap;
+}
+
 .search {
   width: 500px;
-  padding: 10px 0px;
+  padding: 10px;
 }
 
 @media (max-width: 992px) {
+  .search {
+    width: 40%;
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
   .search {
     width: 100%;
     display: block;
