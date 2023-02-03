@@ -22,3 +22,11 @@
     width: 90%;
   }
 }
+
+.form-link {
+  color: $green;
+  text-decoration: none;
+  &:hover {
+    color: darken($green, 10%);
+  }
+}

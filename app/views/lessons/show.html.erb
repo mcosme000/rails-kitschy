@@ -6,11 +6,11 @@
   <div class="container my-5">
     <div class="row g-0">
       <div class="col-md-4 me-3" style="width: 200px">
-            <% if @lesson.photo.attached? %>
-              <%= cl_image_tag @lesson.photo.key, class: "lesson-img" %>
-            <% elsif @lesson.main_photo %>
-              <%= image_tag "#{@lesson.main_photo}", class: "lesson-img" %>
-            <% end %>
+        <% if @lesson.photo.attached? %>
+          <%= cl_image_tag @lesson.photo.key, class: "lesson-img" %>
+        <% elsif @lesson.main_photo %>
+          <%= image_tag "#{@lesson.main_photo}", class: "lesson-img" %>
+        <% end %>
       </div>
       <div class="col-md-8 ms-3">
         <h1><%= @lesson.name %></h1>
@@ -44,7 +44,7 @@
         <% if user_signed_in? %>
           <%= render 'lessons/booking_form' %>
         <% else %>
-          <p>You need to <%= link_to "login", new_user_session_path %> to book your lesson</p>
+          <p>You need to <%= link_to "login", new_user_session_path, class: "form-link" %> to book your lesson</p>
         <% end %>
       </div>
     </section>
