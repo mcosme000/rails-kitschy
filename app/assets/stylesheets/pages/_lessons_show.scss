@@ -1,3 +1,16 @@
+
+.lesson-info {
+  margin-left: 20px;
+}
+
+@media(max-width: 768px) {
+  .lesson-info {
+    margin: 10px 0px;
+  }
+}
+
+
+// GRID CODE
 .photos-container {
   height: 400px;
   display: grid;
