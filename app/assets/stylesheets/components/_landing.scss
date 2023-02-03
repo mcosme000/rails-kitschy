@@ -1,5 +1,5 @@
 .landing {
-  height: 60vh;
+  padding: 100px 0px;
   background-size: cover;
   background-position: bottom;
   display: flex;
@@ -21,6 +21,20 @@
 
     h1, p {
       text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+  }
+}
+
+@media(max-width: 576px) {
+  .landing {
+    padding: 60px 0px;
+    .landing-content {
+      h1 {
+        font-size: 36px;
+      }
+      p {
+        font-size: 20px;
+      }
     }
   }
 }

@@ -1,3 +1,8 @@
+
+body {
+  height: 100vh;
+}
+
 ul {
   list-style: none;
   padding: 0px;
@@ -10,4 +15,21 @@ a {
 img {
   width: 100%;
   object-fit: cover;
+}
+
+// margin top right after the navbar
+.margin-top {
+  margin-top: 75px;
+}
+
+@media(max-width: 768px) {
+  .margin-top {
+    margin-top: 105px;
+  }
+}
+
+@media(max-width: 576px) {
+  .margin-top {
+    margin-top: 160px;
+  }
 }

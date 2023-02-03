@@ -12,10 +12,21 @@
       color: darken($green, 10%);
     }
   }
+  &__booking {
+    width: 500px;
+  }
 }
 
 @media (max-width: 768px) {
   .form {
     width: 90%;
+  }
+}
+
+.form-link {
+  color: $green;
+  text-decoration: none;
+  &:hover {
+    color: darken($green, 10%);
   }
 }
