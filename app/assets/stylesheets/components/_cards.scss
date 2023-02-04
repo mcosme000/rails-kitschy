@@ -37,8 +37,6 @@
 }
 
 
-
-
 // card in lesson index
 .lesson-tags {
   & > ul {
@@ -59,6 +57,20 @@
 
 // card in profile
 .card-in-prifie {
-  padding: 25px;
+  padding: 20px;
   margin-bottom: 16px;
+}
+
+.small-tag {
+  padding: 10px 20px;
+  background: $green;
+  color: #fff;
+}
+
+.background-grey {
+  background: rgb(238, 238, 238);
+}
+
+.wide-photo img {
+  height: 100%;
 }

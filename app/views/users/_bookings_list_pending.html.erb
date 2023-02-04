@@ -4,20 +4,19 @@
       <% if booking.status == "pending" %>
         <hr>
         <div class="list p-1 d-flex justify-content-between align-items-center">
-          <h5 class="mb-0 card-title"><%= booking.start_date.to_s.split(" ")[0] %> <%= booking.start_time.to_s.split(" ")[1][0..4] %></h5>
+          <h5 class="card-title mb-0 me-3"><%= booking.lesson.name %></h5>
           <div class="d-flex justify-content-center align-items-center">
 
-            <h5 class="card-title mb-0 me-3"><%= booking.lesson.name %></h5>
-            <h5 class="mb-0 me-3"><strong><i class="fa-solid fa-user"></i> </strong> <%= booking.user.first_name %> : <%= booking.participants %></h5>
+            <p class="mb-0 me-2 card-title"><i class="fa fa-solid fa fa-calendar"></i> <%= booking.start_date.to_s.split(" ")[0] %> <%= booking.start_time.to_s.split(" ")[1][0..4] %></p>
+            <p class="mb-0 me-2"><strong><i class="fa-solid fa-user"></i> </strong> <%= booking.user.first_name %> : <%= booking.participants %></p>
 
             <div class="buttons d-flex">
-              <%= link_to 'Accept', accept_booking_path(booking), data: {turbo_method: :accept, turbo_confirm: "Do you accept this booking?"}, class: "btn btn-success me-2" %>
-              <%= link_to 'Reject', reject_booking_path(booking), data: {turbo_method: :reject, turbo_confirm: "Do you reject this booking?"}, class: "btn btn-secondary" %>
+              <%= link_to 'Accept', accept_booking_path(booking), data: {turbo_method: :accept, turbo_confirm: "Do you want to accept this booking?"}, class: "btn btn-success me-2 btn-sm" %>
+              <%= link_to 'Reject', reject_booking_path(booking), data: {turbo_method: :reject, turbo_confirm: "Are you sure you want to reject this booking?"}, class: "btn btn-secondary btn-sm" %>
             </div>
           </div>
         </div>
       <% end %>
     <% end %>
-    <hr>
   </div>
 </div>

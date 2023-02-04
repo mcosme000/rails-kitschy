@@ -40,6 +40,7 @@ class LessonsController < ApplicationController
     @lesson.user = current_user
     authorize @lesson
     if @lesson.save
+      flash[:notice] = "Your lesson has been added"
       redirect_to lesson_path(@lesson)
     else
       render :new, status: :unprocessable_entity
@@ -53,7 +54,7 @@ class LessonsController < ApplicationController
   def update
     authorize @lesson
     if @lesson.update(lesson_params)
-      flash[:notice] = "Lesson has been UPDATED."
+      flash[:notice] = "Your lesson has been updated"
       redirect_to lesson_path(@lesson)
     else
       render :edit, status: :unprocessable_entity
@@ -63,6 +64,7 @@ class LessonsController < ApplicationController
   def destroy
     authorize @lesson
     @lesson.destroy
+    flash[:notice] = "Your lesson has been deleted"
     redirect_to profile_path, status: :see_other
   end
 

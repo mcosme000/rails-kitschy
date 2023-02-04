@@ -1,13 +1,8 @@
-.btn-maingreen {
-  background-color: $green;
-  color: #fff;
-}
-
 .btn-lightgreen {
   background-color: $lightgreen;
-  color: black;
+  color: #fff;
   &:hover {
-    background-color: $green;
+    background: darken($lightgreen, 10%);
     color: #fff;
   }
 }
