@@ -22,10 +22,10 @@ class LessonsController < ApplicationController
     @review = Review.new
     if @lesson.geocoded?
       @markers =
-        {
+        [{
           lat: @lesson.latitude,
           lng: @lesson.longitude
-        }
+        }]
     end
     authorize @lesson
   end
