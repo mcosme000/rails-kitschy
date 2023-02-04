@@ -1,0 +1,13 @@
+.list-inline {
+  & > li {
+    display: inline-block;
+  }
+}
+
+.star-bright {
+  color: gold;
+}
+
+.star-gray {
+  color: gray;
+}
