@@ -5,11 +5,13 @@
   <div class="container my-5">
     <div class="row g-0">
       <div class="col-md-4 me-3" id="photo-box">
+        <div class="img-fluid">
             <% if @lesson.photo.attached? %>
               <%= cl_image_tag @lesson.photo.key, class: "lesson-img" %>
             <% elsif @lesson.main_photo %>
               <%= image_tag "#{@lesson.main_photo}", class: "lesson-img" %>
             <% end %>
+        </div>
       </div>
     <div class="col-md-8 ms-3 pt-2">
       <h1><%= @lesson.name %></h1>
