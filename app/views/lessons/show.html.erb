@@ -3,47 +3,20 @@
   </div>
 </div>
 
-<<<<<<< HEAD
-  <div class="container my-5">
-    <div class="row g-0">
-      <div class="col-md-4 me-3" id="photo-box">
-        <div class="img-fluid">
-            <% if @lesson.photo.attached? %>
-              <%= cl_image_tag @lesson.photo.key, class: "lesson-img" %>
-            <% elsif @lesson.main_photo %>
-              <%= image_tag "#{@lesson.main_photo}", class: "lesson-img" %>
-            <% end %>
-        </div>
-      </div>
-=======
 <div class="container my-5">
-  <div class="row g-0">
-    <div class="col-md-4 me-3" id="photo-box">
-      <% if @lesson.photo.attached? %>
-        <%= cl_image_tag @lesson.photo.key, class: "lesson-img" %>
-      <% elsif @lesson.main_photo %>
-        <%= image_tag "#{@lesson.main_photo}", class: "lesson-img" %>
-      <% end %>
-    </div>
-    
->>>>>>> 7cc520d75378061f8f5064239f49dc9f1244fa88
-    <div class="col-md-8 ms-3 pt-2">
-      <h1><%= @lesson.name %></h1>
-      <div class="p-0 d-flex flex-wrap">
-        <p class="d-inline me-3 tag"><i class="fa fa-solid fa fa-person me-2"></i> <%= @lesson.capacity %></p>
-        <p class="d-inline me-3 tag"><i class="fa-solid fa-utensils me-2"></i> <%= @lesson.cuisine_genre %> food</p>
-        <p class="d-inline me-3 tag"><i class="fa fa-solid fa fa-clock me-2"></i> <%= @lesson.lesson_length_minutes %> min</p>
-      </div>
-      <p><%= @lesson.description %></p>
-    </div>
-  </div>
+
+  <%= render 'lessons/lesson_info' %>
 
   <hr class="mt-3">
 
   <section class="row mt-5">
     <div class="col-12 col-lg-6 d-flex flex-column">
       <div class="d-flex align-items-center">
-        <%= image_tag('person_02.jpg', class: "avatar-large")  %>
+        <% if @lesson.user.photo.attached? %>
+          <%= cl_image_tag(@lesson.user.photo.key, { class: "avatar-large" }) %>
+        <% else %>
+          <%= image_tag('person_02.jpg', class: "avatar-large")  %>
+        <% end %>
         <div class="ms-3">
           <p class="fw-bold m-0">Host: <%= @lesson.user.first_name %></p>
           <p class="m-0"><%= @lesson.user.lessons.count %> Verified lessons</p>
@@ -66,26 +39,9 @@
   </section>
 </div>
 
-
-
- <div class="section bg-white py-5">
+<div class="section bg-white py-5">
   <div class="container">
-    <section class="row">
-      <div class="col-12 col-md-4">
-        <h2 class="mb-4">Location</h2>
-        <p class="fw-bold"><%= @lesson.address %></p>
-        <ul class="p-0">
-          <p class="mb-1">Access Instructions:</p>
-          <li class="mb-1">From the station exit the north gates and head up the hill. </li>
-          <li class="mb-1">After walking for 5 minutes you will see a children's park with a giant tree. It has a panda toy. Turn right towards the east, in front of the park. </li>
-          <li class="mb-1">Along the road you will see big trees, they are pretty in spring with blossoms. About 5 mins you will see brown house made of bricks.</li>
-          <li class="mb-1">There will be a red door with flowers hanging from the door handle.</li>
-        </ul>
-      </div>
-
-      <div class="col-12 col-md-8">
-        <%= image_tag('map.png') %>
-      </div>
+    <%= render 'lessons/map' %>
 
     <hr class="mt-5">
 
@@ -99,19 +55,5 @@
 
 
 <div class="container my-5">
-  <section class="mt-5">
-    <h2 class="mb-4">Photos from past lessons</h2>
-    <div class="photos-container">
-      <div class="div1" style="background-image: url(https://images.unsplash.com/photo-1589047133531-570405874c6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)">
-      </div>
-      <div class="div2" style="background-image: url(https://images.unsplash.com/photo-1570604127008-f644337cfb8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)">
-      </div>
-      <div class="div3" style="background-image: url(https://images.unsplash.com/photo-1589047133481-02b4a5327d89?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80)">
-      </div>
-      <div class="div4" style="background-image: url(https://images.unsplash.com/photo-1612432524941-5afe13fa63d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2231&q=80)">
-      </div>
-      <div class="div5" style="background-image: url(https://images.unsplash.com/photo-1589047133531-570405874c6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)">
-      </div>
-    </div>
-  </section>
+  <%= render 'lessons/photo_grid' %>
 </div>
