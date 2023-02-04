@@ -42,16 +42,17 @@
 <div class="section bg-white py-5">
   <div class="container">
     <%= render 'lessons/map' %>
-
-    <hr class="mt-5">
-
-    <div class="mt-5 d-flex justify-content-between">
-      <%= render "lessons/review_card" %>
-      <%= render template: "reviews/new" %>
-    </div>
-
   </div>
 </div>
+
+<div class="container">
+  <div class="mt-5 row">
+    <%= render "lessons/review_card" %>
+    <%= render template: "reviews/new" %>
+  </div>
+</div>
+
+
 
 
 <div class="container my-5">

@@ -10,14 +10,9 @@
       <li class="mb-1">There will be a red door with flowers hanging from the door handle.</li>
     </ul>
   </div>
-    <div style="height: 200px;" class="col-12 col-md-6"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-
-
-  <%# <div class="col-12 col-md-8">
-    <%= image_tag('map.png') %>
-  <%# </div> %>
+  <div style="height: 400px;" class="col-12 col-md-8"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </section>
