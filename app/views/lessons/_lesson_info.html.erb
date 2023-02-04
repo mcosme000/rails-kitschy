@@ -1,5 +1,5 @@
-<div class="row g-0">
-  <div class="col-md-4 photo-box">
+<div class="d-flex lesson-container">
+  <div class="photo-box">
     <% if @lesson.photo.attached? %>
       <%= cl_image_tag @lesson.photo.key%>
     <% elsif @lesson.main_photo %>
