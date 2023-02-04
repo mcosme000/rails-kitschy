@@ -1,26 +1,30 @@
-<ul class="liststyle-none  padding-left-none">
+<ul class="ps-0 flex-grow-1 px-5">
   <% unless @lesson.reviews.empty? %>
+  <hr>
     <% @lesson.reviews.each do |review| %>
       <li>
         <div class="card-review d-flex">
           <div>
             <ul class="list-inline">
               <% review.rating.times do %>
-                <li><i class="fa-solid fa-star bg-bright"></i></li>
+                <li><i class="fa-solid fa-star star-bright"></i></li>
               <% end %>
               <% (5 - review.rating).times do %>
-                <li><i class="fa-solid fa-star bg-gray"></i></li>
+                <li><i class="fa-solid fa-star star-gray"></i></li>
               <% end %>
             </ul>
             <h4><%= review.content %></h4>
           </div>
           <div class="ms-auto">
-            <%= link_to review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-              <i class="fa-solid fa-trash-can"></i>
+            <% if review.user == current_user %>
+              <%= link_to review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-solid fa-trash-can"></i>
+              <% end %>
             <% end %>
           </div>
         </div>
       </li>
+      <hr>
     <% end %>
   <% else %>
   <li>
