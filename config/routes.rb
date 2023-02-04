@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     end
   end
   get '/profile', to: 'users#profile'
+  resources :users, only: %i[edit update]
   resources :reviews, only: %i[edit update destroy]
 end
