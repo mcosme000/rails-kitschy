@@ -27,12 +27,6 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <%# <li class="nav-item">
-            <%= link_to "My Lessons", my_lessons_lessons_path, class: "nav-link me-4" %>
-          <%# </li>
-          <li class="nav-item">
-            <%= link_to "My bookings", bookings_path, class: "nav-link me-4" %>
-          <%# </li> %>
           <li class="nav-item">
             <%= link_to "Create a lesson", new_lesson_path, class: "nav-link me-4" %>
           </li>
@@ -40,7 +34,7 @@
             <% if current_user.photo.attached? %>
               <%= cl_image_tag(current_user.photo.key, { class: "avatar dropdown-toggle", id: "navbarDropdown", "data-bs-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false" }) %>
             <% else %>
-              <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" />
+               <%= image_tag('person_02.jpg', class: "avatar dropdown-toggle", id: "navbarDropdown", "data-bs-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false") %>
             <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Profile", profile_path, class: "dropdown-item" %>

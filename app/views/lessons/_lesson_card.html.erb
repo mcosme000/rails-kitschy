@@ -9,7 +9,11 @@
 
       <% if lesson.user == current_user %>
         <div>
-          <%= cl_image_tag(current_user.photo.key, { class: "avatar-sm"}) %>
+          <% if lesson.user.photo.attached? %>
+            <%= cl_image_tag(lesson.user.photo.key, { class: "avatar-sm" }) %>
+          <% else %>
+            <%= image_tag('person_02.jpg', class: "avatar-sm") %>
+          <% end %>
         </div>
       <% end %>
 
