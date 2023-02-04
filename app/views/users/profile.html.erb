@@ -8,13 +8,13 @@
   <div class="avatar-main d-flex">
     <div class="flex-avatar">
       <% if current_user.photo.attached? %>
-        <%= cl_image_tag(current_user.photo.key, { class: "avatar-mainvisual dropdown-toggle", id: "navbarDropdown", "data-bs-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false" }) %>
+        <%= cl_image_tag(current_user.photo.key, { class: "avatar-profile" }) %>
       <% else %>
         <img class="avatar-profile" src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" />
       <% end %>
     </div>
     <div class="user-info">
-      <h3><%= current_user.first_name  %></h3>
+      <h3><%= current_user.first_name  %><span><%= link_to "Edit", edit_user_path(current_user), class: "edit-link" %></span></h3>
       <h5><i class="fa-solid fa-envelope"></i> <%= current_user.email %></h6>
       <p class="w-75 description">About me: I am excited to share with you my recipes. I have been cooking for almost 10 years. Most of my recipes are passed down from my grandmother
       I love cooking and I am really glad to be able to meet you. I would love to welcome individuals with open mind and share their story with me.</p>

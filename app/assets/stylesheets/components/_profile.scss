@@ -44,3 +44,13 @@
     margin-bottom: 20px;
   }
 }
+
+.edit-link {
+  color: $green;
+  font-size: 16px;
+  text-decoration: none;
+  margin-left: 10px;
+  &:hover {
+    color: darken($green, 10%);
+  }
+}

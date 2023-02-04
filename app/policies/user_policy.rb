@@ -9,4 +9,12 @@ class UserPolicy < ApplicationPolicy
   def profile?
     true
   end
+
+  def edit?
+    update?
+  end
+
+  def update?
+    record == user
+  end
 end
