@@ -11,22 +11,4 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
-#margin {
-  margin: 50px 0px;
-}
-
-#photo-box {
-  margin: 8px 16px;
-  max-width: 350px;
-  height: 100%;
-}
-
-.h1-form {
-  padding-top: 80px;
-  margin: 0px 16px;
-}
-
-#new_lesson {
-  margin: 68px 16px;
-}
+@import "components/show"
