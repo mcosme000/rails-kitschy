@@ -1,0 +1,19 @@
+<div class="row g-0">
+  <div class="col-md-4 me-3" id="photo-box">
+    <% if @lesson.photo.attached? %>
+      <%= cl_image_tag @lesson.photo.key, class: "lesson-img" %>
+    <% elsif @lesson.main_photo %>
+      <%= image_tag "#{@lesson.main_photo}", class: "lesson-img" %>
+    <% end %>
+  </div>
+
+  <div class="col-md-8 lesson-info">
+    <h1><%= @lesson.name %></h1>
+    <div class="p-0 d-flex flex-wrap">
+      <p class="d-inline me-3 tag"><i class="fa fa-solid fa fa-person me-2"></i> <%= @lesson.capacity %></p>
+      <p class="d-inline me-3 tag"><i class="fa-solid fa-utensils me-2"></i> <%= @lesson.cuisine_genre %> food</p>
+      <p class="d-inline me-3 tag"><i class="fa fa-solid fa fa-clock me-2"></i> <%= @lesson.lesson_length_minutes %> min</p>
+    </div>
+    <p><%= @lesson.description %></p>
+  </div>
+</div>
