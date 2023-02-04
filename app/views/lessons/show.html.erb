@@ -4,15 +4,16 @@
 </div>
 
 <div class="container my-5">
-  <div class="row">
-    <div class="col-md-4 me-3" style="width: 200px">
+  <div class="row g-0">
+    <div class="col-md-4 me-3" id="photo-box">
       <% if @lesson.photo.attached? %>
         <%= cl_image_tag @lesson.photo.key, class: "lesson-img" %>
       <% elsif @lesson.main_photo %>
         <%= image_tag "#{@lesson.main_photo}", class: "lesson-img" %>
       <% end %>
     </div>
-    <div class="col-md-8 lesson-info">
+    
+    <div class="col-md-8 ms-3 pt-2">
       <h1><%= @lesson.name %></h1>
       <div class="p-0 d-flex flex-wrap">
         <p class="d-inline me-3 tag"><i class="fa fa-solid fa fa-person me-2"></i> <%= @lesson.capacity %></p>
@@ -22,7 +23,7 @@
       <p><%= @lesson.description %></p>
     </div>
   </div>
-  
+
   <hr class="mt-3">
 
   <section class="row mt-5">
@@ -51,7 +52,9 @@
   </section>
 </div>
 
-<div class="section bg-white py-5">
+
+
+ <div class="section bg-white py-5">
   <div class="container">
     <section class="row">
       <div class="col-12 col-md-4">
@@ -66,18 +69,20 @@
         </ul>
       </div>
 
+      <div class="col-12 col-md-8">
+        <%= image_tag('map.png') %>
+      </div>
 
     <hr class="mt-5">
 
     <div class="mt-5 d-flex justify-content-between">
-
       <%= render "lessons/review_card" %>
       <%= render template: "reviews/new" %>
-
     </div>
 
   </div>
 </div>
+
 
 <div class="container my-5">
   <section class="mt-5">
