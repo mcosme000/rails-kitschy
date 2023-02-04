@@ -6,7 +6,11 @@
           <div class="card m-4 background-grey" style="max-width: 540px;">
             <div class="d-flex row g-0">
               <div class="col-md-4 background-grey">
-                <%= image_tag(booking.lesson.main_photo) %>
+                <% if booking.lesson.main_photo.present? %>
+                  <%= image_tag(booking.lesson.main_photo) %>
+                <% else %>
+                  <%= cl_image_tag(booking.lesson.photo.key) %>
+                <% end %>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -38,7 +42,11 @@
           <div class="card m-4 background-grey" style="max-width: 540px;">
             <div class="d-flex row g-0">
               <div class="col-md-4 background-grey">
-                <%= image_tag(booking.lesson.main_photo) %>
+                <% if booking.lesson.main_photo.present? %>
+                  <%= image_tag(booking.lesson.main_photo) %>
+                <% else %>
+                  <%= cl_image_tag(booking.lesson.photo.key) %>
+                <% end %>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
