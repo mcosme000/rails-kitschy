@@ -1,24 +1,56 @@
 .avatar-main {
-  position: absolute;
-  bottom: -170%;
-  left: 50%;
-  transform: translateX(-50%);
-  flex-direction: column;
-  text-align: center;
-  padding-left: 0;
-  @include media-breakpoint-up(xl) {
-    text-align: left;
-    flex-direction: row;
-    bottom: -80%;
-    width: 80%;
-    & .flex-text {
-      padding-top: 80px;
+  align-items: center;
+  position: relative;
+  top: -50px;
+  @media(max-width: 992px) {
+    margin-top: 30px;
+    top: -70px;
+    .avatar-profile {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  @media(max-width: 576px) {
+    .avatar-profile {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  .user-info {
+    padding-top: 70px;
+    @media(max-width: 992px) {
+      .description {
+        display: none;
+      }
+    }
+    @media(max-width: 576px) {
+      padding-top: 50px;
+      h3 {
+        font-size: 18px;
+      }
+      h5 {
+        font-size: 14px;
+      }
     }
   }
 }
-.mt-large {
-  margin-top: 420px;
-  @include media-breakpoint-up(xl) {
-    margin-top: 230px;
+
+.hidden {
+  display: none;
+  @media(max-width: 992px) {
+    position: relative;
+    top: -30px;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.edit-link {
+  color: $green;
+  font-size: 16px;
+  text-decoration: none;
+  margin-left: 10px;
+  &:hover {
+    color: darken($green, 10%);
   }
 }
