@@ -20,7 +20,7 @@ User.create([
   { email: "jay@example.com", password: "1234567", first_name: "Jay"  }
             ])
 puts "finished creating users"
-puts "seeding 6 lessons..."
+puts "seeding 16 lessons..."
 
 Lesson.create(
   name: "Authentic Turkish Doner Kebab",
@@ -47,15 +47,15 @@ Lesson.create(
 )
 
 Lesson.create(
-  name: "Red Velvet Cheesecake Swirl Brownies",
+  name: "Sweet Korean Pancakes (Hotteok) - Korean Bapsang ",
   address: "1-9 Sasazuka, Shibuya, Tokyo 151-0073",
-  cuisine_genre: "Baked",
-  description: "These red velvet cheesecake brownies are moist, delicious, and absolutely beautiful! Perfect for red velvet cake lovers; adds a different twist to the traditional cake. A great dessert for Valentine's Day and can be made ahead.",
+  cuisine_genre: "Korea",
+  description: "Hotteok is a Korean popular street food and dessert that tourists and locals alike consume regularly. In short, these sweet pancakes consist of a golden dough outer layer with a brown sugar-based, gooey inside. When you bite into hotteok, you are met with a burst of sweetness and the occasional nuts or berries. Plus, these pancakes are fairly easy to make!",
   capacity: rand(1..10),
   fee: 10 * rand(1..15),
   lesson_length_minutes: 15 * rand(2..8),
   user: User.all.sample,
-  main_photo: "https://www.allrecipes.com/thmb/uIrY0puwKI7tVu8-_d4s7cdI8yc=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/red-velvet-cheesecake-swirl-brownies-photo-by-lynninma-1091077-261fc4c8bad14752ae4f909d780b3c3c.jpg"
+  main_photo: "https://www.koreanbapsang.com/wp-content/uploads/2019/02/DSC_2737-1.jpg"
 )
 
 Lesson.create(
@@ -71,15 +71,15 @@ Lesson.create(
 )
 
 Lesson.create(
-  name: "大根まるごと一本使うミルフィーユ鍋！ レシピ・作り方",
+  name: "Cream Puff 'Crack Buns' (Choux au Craquelin)",
   address: "2-19 Matsugaya, Taito, Tokyo 111-0036 Taito",
-  cuisine_genre: "Japanese",
-  description: "簡単なのに華やか！旬のみずみずしい大根を美味しくたくさん食べられます！スライス大根なので辛味がなくお子さまも安心して召し上がれます！",
+  cuisine_genre: "Belgian",
+  description: "These gorgeous cream puff 'crack buns' were inspired by the Great British Baking Show, which is currently my favorite thing on television. Speaking of favorite things, Boston cream pie is one of my all-time favorite desserts, and this was basically an individually portioned, probably superior version of that. These would be great filled with all kinds of things, but it's hard to beat vanilla bean pastry cream.",
   capacity: rand(1..10),
   fee: 10 * rand(1..15),
   lesson_length_minutes: 15 * rand(2..8),
   user: User.all.sample,
-  main_photo: "https://recipe.r10s.jp/recipe-space/d/strg/ctrl/3/7c73e8174db852b1dda24f3779dbd0ef689ddbd0.25.2.3.2.jpg?interpolation=lanczos-none&fit=around|716:716&crop=716:716;*,*"
+  main_photo: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F8111078.jpg&q=60&c=sc&orient=true&poi=auto&h=512"
 )
 
 Lesson.create(
@@ -95,22 +95,21 @@ Lesson.create(
 )
 
 Lesson.create(
-  name: "サムゲタン風スープ",
+  name: "Gyoza (Japanese Potstickers)",
   address: "7 Naokawa kaminaomi, Saiki shi, Oita ken",
-  cuisine_genre: "Korean",
-  description: "丸鶏の中に高麗人参やもち米などを詰めて煮込む、韓国の伝統料理「参鶏湯（サムゲタン）」。ポカポカ温まるイメージから日本では寒い季節に食べたくなる人も多いと思いますが、韓国では暑い夏に食べるスタミナ料理として有名です。
-  高麗人参やなつめ、にんにく、しょうがなど、滋養のつく食材がたっぷり入った参鶏湯は、疲労回復や夏バテ予防、風邪対策にぴったりです。一度作り方を覚えておくと、夏はもちろん、忙しい年末や季節の変わり目など、あらゆるシーンで役立つこと間違いなし！
-  そこで今回は、丸鶏で作る本格的な参鶏湯の作り方を伊勢丹新宿店の＜韓国料理 韓食 古家＞の大武久人さんに教えてもらいました。「難しそう…」と思うかもしれませんが、食材さえそろえればあとは煮込むだけなので、意外と簡単に作れますよ。また丸鷄が手に入らない場合の作り方も紹介しているので、あわせてチェックしてみてください。",
+  cuisine_genre: "Japanese",
+  description: "Juicy on the inside, crispy and golden brown on the outside, these Japanese pan-fried dumplings, or Gyoza, are a popular weeknight meal as well as a great appetizer for your next dinner party.",
   capacity: rand(1..10),
   fee: 10 * rand(1..15),
   lesson_length_minutes: 15 * rand(2..8),
   user: User.all.sample,
-  main_photo: "https://pds.exblog.jp/pds/1/201007/07/45/e0040345_933562.jpg"
+  main_photo: "https://www.justonecookbook.com/wp-content/uploads/2020/04/Gyoza-3096-II.jpg"
 )
 
+# DONT WORK
 Lesson.create(
   name: "Anzac Biscuits (Australian Coconut-Oat Cookies)",
-  address: "15 Ikawacho hamanishi, Miyoshi shi, Tokushima ken",
+  address: "15, Miyoshi, Tokushima",
   cuisine_genre: "Australian",
   description: "I introduce to you my traditional recipe from Australia and New Zealand. Associated with the joint public holiday (ANZAC Day) to commemorate the Gallipoli landings during WW1.",
   capacity: rand(1..10),
@@ -156,9 +155,10 @@ Lesson.create(
   main_photo: "https://www.allrecipes.com/thmb/1xLhz3k83_lEGUe4qaQpe5e1q6s=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/8139887-f05cfb8d94af4f7bbf11fa62d03e7163.jpg"
 )
 
+# DONT WORK
 Lesson.create(
   name: "Indian Chicken Curry (Murgh Kari)",
-  address: "15 Tomihisacho, Miyako gun kanda machi, Fukuoka ken",
+  address: "15, Miyako, Fukuoka",
   cuisine_genre: "Indian",
   description: "This is a really good recipe for spicy Indian chicken curry. It's pretty easy to make and tastes really good!",
   capacity: rand(1..10),
@@ -170,7 +170,7 @@ Lesson.create(
 
 Lesson.create(
   name: "Pork Sinigang",
-  address: "4-chōme-19-9 Takashimadaira, Itabashi City, Tokyo 175-0082",
+  address: "4-9 Takashimadaira, Itabashi, Tokyo 175-0082",
   cuisine_genre: "Filipino",
   description: "Sinigang is a Filipino soup cooked with pork. Serve with rice and for additional sauce, use soy or fish sauce. If you want to, you can add what Filipinos call gabi gabi, which is a small taro root. When peeled they look like potatoes. You can add five to six of them when you add the water and make sure they are cooked through. Take them out when they are cooked because they can get too soft.",
   capacity: rand(1..10),
@@ -182,7 +182,7 @@ Lesson.create(
 
 Lesson.create(
   name: "Traditional Sauerbraten",
-  address: "9 Wagacho iwasawa, Kitakami shi, Iwate ken",
+  address: "12, Kitakami, Iwate",
   cuisine_genre: "German",
   description: "For this sauerbraten, I found two slightly different handwritten versions of my Grandmother's recipe. Born in Nekkar am Rhein in 1904, she naturally learned to cook traditional German meals as a young woman and didn't rely on a cookbook. I try to capture the nuance in this. Serve with potato dumplings.",
   capacity: rand(1..10),
@@ -194,7 +194,7 @@ Lesson.create(
 
 Lesson.create(
   name: "Ayam Penyet Pedas (Indonesian Spicy Penyet Chicken)",
-  address: "9 Wagacho iwasawa, Kitakami shi, Iwate ken",
+  address: "9, Kitakami, Iwate",
   cuisine_genre: "Indonesian",
   description: "Ayam Penyet (Penyet Chicken) is an incredibly spicy Indonesian dish that will make your tongue feel like burning... you will need to go to a special Asian grocery store to get some of the ingredients.",
   capacity: rand(1..10),

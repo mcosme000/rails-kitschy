@@ -1,0 +1,22 @@
+.flag {
+  padding: 5px 10px;
+  background: #f6f6f6;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.avatar-sm {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}

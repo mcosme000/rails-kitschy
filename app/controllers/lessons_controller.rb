@@ -19,11 +19,13 @@ class LessonsController < ApplicationController
 
   def show
     @booking = Booking.new
-    @markers = @lesson.geocode do
-      {
-        lat: @lesson.latitude,
-        lng: @lesson.longitude
-      }
+    @review = Review.new
+    if @lesson.geocoded?
+      @markers =
+        {
+          lat: @lesson.latitude,
+          lng: @lesson.longitude
+        }
     end
     authorize @lesson
   end
