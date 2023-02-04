@@ -8,9 +8,8 @@
       <% end %>
 
       <% if lesson.user == current_user %>
-        <%# <div class="flag">Your lesson</div> %>
         <div>
-          <img class="avatar-sm" src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" />
+          <%= cl_image_tag(current_user.photo.key, { class: "avatar-sm"}) %>
         </div>
       <% end %>
 
