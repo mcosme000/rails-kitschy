@@ -1,4 +1,15 @@
 
+.photo-box {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
 .lesson-info {
   margin-left: 20px;
 }

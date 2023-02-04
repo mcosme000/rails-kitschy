@@ -1,13 +1,13 @@
-<div class="row g-0">
-  <div class="col-md-4 photo-box">
+<div class="d-flex">
+  <div class="photo-box">
     <% if @lesson.photo.attached? %>
       <%= cl_image_tag @lesson.photo.key%>
     <% elsif @lesson.main_photo %>
-      <%= image_tag "#{@lesson.main_photo}", class: "lesson-img" %>
+      <%= image_tag "#{@lesson.main_photo}" %>
     <% end %>
   </div>
 
-  <div class="col-md-8 lesson-info">
+  <div class="lesson-info">
     <h1><%= @lesson.name %></h1>
     <div class="p-0 d-flex flex-wrap">
       <p class="d-inline me-3 tag"><i class="fa fa-solid fa fa-person me-2"></i> <%= @lesson.capacity %></p>
